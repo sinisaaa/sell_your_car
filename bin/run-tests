@@ -1,0 +1,8 @@
+#!/bin/bash
+
+bin/console --env=test  doc:sch:upd -f
+yes | bin/console --env=test doctrine:fixtures:load
+./vendor/bin/phpunit
+
+
+
