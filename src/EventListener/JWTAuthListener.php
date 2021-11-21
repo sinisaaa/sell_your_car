@@ -37,8 +37,7 @@ class JWTAuthListener
         $user = $event->getUser();
         $payload = $event->getData();
 
-        $payload['firstName'] = $user->getFirstName();
-        $payload['lastName'] = $user->getLastName();
+        $payload['name'] = $user->getName();
 
         $event->setData($payload);
     }

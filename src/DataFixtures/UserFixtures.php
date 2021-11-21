@@ -34,8 +34,12 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
         $users = [
             [
                 'email' => 'user@mail.com',
-                'firstName' => 'Regular',
-                'lastName' => 'User',
+                'name' => 'Regular User',
+                'role_reference_name' => 'role_user',
+            ],
+            [
+                'email' => 'logout@mail.com',
+                'name' => 'Logout User',
                 'role_reference_name' => 'role_user',
             ],
         ];
@@ -44,8 +48,7 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
             $this->createUser(
                 $manager,
                 $user['email'],
-                $user['firstName'],
-                $user['lastName'],
+                $user['name'],
                 $user['role_reference_name']
             );
         }
@@ -54,21 +57,19 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
     /**
      * @param ObjectManager $manager
      * @param string $email
-     * @param string $firstName
-     * @param string $lastName
+     * @param string $name
      * @param string $roleReferenceName
      */
     private function createUser(
         ObjectManager $manager,
         string $email,
-        string $firstName,
-        string $lastName,
+        string $name,
         string $roleReferenceName,
     ): void
     {
         /** @var Role $role */
         $role = $this->getReference($roleReferenceName);
-        $user = $this->userService->createUser($email, $firstName, $lastName, '123qweQWE', $role);
+        $user = $this->userService->createUser($email, $name, '123qweQWE', $role);
 
         $this->encodeService->encodeUserPassword($user);
 

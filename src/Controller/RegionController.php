@@ -4,6 +4,7 @@ declare(strict_types=1);
 
 namespace App\Controller;
 
+use App\Controller\Base\BaseController;
 use Doctrine\ORM\EntityManagerInterface;
 use Swagger\Annotations as SWG;
 use App\Entity\Region;

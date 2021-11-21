@@ -5,11 +5,13 @@ nelmio_api_doc:
             description: Autobum APIs!
             version: 1.0.0
         securityDefinitions:
-            bearer:
+            Bearer:
                 type: apiKey
                 description: 'Enter in value field "Bearer TOKEN_VALUE"'
                 name: Authorization
                 in: header
+        security:
+            - Bearer: []
         definitions:
             AccessToken:
                 type: object

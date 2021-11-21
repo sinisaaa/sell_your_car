@@ -5,6 +5,9 @@
 # https://symfony.com/doc/current/best_practices.html#use-parameters-for-application-configuration
 parameters:
     jwt_refresh_token_ttl: '%env(JWT_REFRESH_TOKEN_TTL)%'
+    from_email: '%env(FROM_EMAIL)%'
+    from_email_name: '%env(FROM_EMAIL_NAME)%'
+    event_waiting_time: '%env(EVENTS_WAITING_TIME)%'
 
 services:
     # default configuration for services in *this* file
@@ -13,6 +16,9 @@ services:
         autoconfigure: true # Automatically registers your services as commands, event subscribers, etc.
         bind:
             $jwtRefreshTokenTTL: '%jwt_refresh_token_ttl%'
+            $fromEmail: '%from_email%'
+            $fromEmailName: '%from_email_name%'
+            $eventWaitingTime: '%event_waiting_time%'
 
     app.doctrine.account_save_subscriber:
         class: App\EventSubscriber\SaveUserSubscriber

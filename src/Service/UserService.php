@@ -13,17 +13,8 @@ final class UserService
 {
 
     /**
-     * UserService constructor.
-     * @param ValidatorInterface $validator
-     */
-    public function __construct(private ValidatorInterface $validator)
-    {
-    }
-
-    /**
      * @param string $email
-     * @param string $firstName
-     * @param string $lastName
+     * @param string $name
      * @param string $plainPassword
      * @param Role $role
      * @param string|null $phone
@@ -32,8 +23,7 @@ final class UserService
      */
     public function createUser(
         string $email,
-        string $firstName,
-        string $lastName,
+        string $name,
         string $plainPassword,
         Role $role,
         ?string $phone = null,
@@ -43,8 +33,7 @@ final class UserService
         $user = new User();
         $user
             ->setEmail($email)
-            ->setFirstName($firstName)
-            ->setLastName($lastName)
+            ->setName($name)
             ->setUsername($email)
             ->setPlainPassword($plainPassword)
             ->setCreatedOn(new DateTime())

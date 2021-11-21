@@ -223,7 +223,7 @@ $(document).ready(function() {
     chart.yAxis.axisLabel('Cyclomatic Complexity');
 
     d3.select('#classComplexity svg')
-      .datum(getComplexityData([[100,5,"<a href=\"AuthController.php.html#20\">App\\Controller\\AuthController<\/a>"],[100,0,"<a href=\"BaseController.php.html#9\">App\\Controller\\BaseController<\/a>"],[100,1,"<a href=\"MyProfileController.php.html#14\">App\\Controller\\MyProfileController<\/a>"],[100,3,"<a href=\"RegionController.php.html#16\">App\\Controller\\RegionController<\/a>"],[100,5,"<a href=\"UserTokenController.php.html#18\">App\\Controller\\UserTokenController<\/a>"]], 'Class Complexity'))
+      .datum(getComplexityData([[100,5,"<a href=\"AuthController.php.html#20\">App\\Controller\\AuthController<\/a>"],[100,0,"<a href=\"BaseController.php.html#9\">App\\Controller\\Base\\BaseController<\/a>"],[100,1,"<a href=\"MyProfileController.php.html#14\">App\\Controller\\MyProfileController<\/a>"],[100,3,"<a href=\"RegionController.php.html#16\">App\\Controller\\RegionController<\/a>"],[100,5,"<a href=\"UserTokenController.php.html#18\">App\\Controller\\UserTokenController<\/a>"]], 'Class Complexity'))
       .transition()
       .duration(500)
       .call(chart);

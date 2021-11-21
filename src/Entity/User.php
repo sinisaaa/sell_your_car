@@ -36,14 +36,7 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
      * @Groups({"user.get"})
      * @var string
      */
-    private string $firstName;
-
-    /**
-     * @ORM\Column(type="string", length=255)
-     * @Groups({"user.get"})
-     * @var string
-     */
-    private string $lastName;
+    private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
@@ -76,13 +69,13 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
      * @Assert\NotBlank(message="Account.Password.Empty", allowNull=true)
      * @Assert\Length(
      *      min = 8,
-     *      minMessage = "Account.Password.Min6Chars",
+     *      minMessage = "Password must be at least 8 characters long",
      * )
      * @Assert\Regex("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).+$/")
      *
      * @var string|null
      */
-    private ?string $plain_password = null;
+    private ?string $plainPassword = null;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -149,37 +142,18 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
     /**
      * @return string|null
      */
-    public function getFirstName(): ?string
+    public function getName(): ?string
     {
-        return $this->firstName;
+        return $this->name;
     }
 
     /**
-     * @param string $firstName
+     * @param string $name
      * @return $this
      */
-    public function setFirstName(string $firstName): self
+    public function setName(string $name): self
     {
-        $this->firstName = $firstName;
-
-        return $this;
-    }
-
-    /**
-     * @return string|null
-     */
-    public function getLastName(): ?string
-    {
-        return $this->lastName;
-    }
-
-    /**
-     * @param string $lastName
-     * @return $this
-     */
-    public function setLastName(string $lastName): self
-    {
-        $this->lastName = $lastName;
+        $this->name = $name;
 
         return $this;
     }
@@ -315,27 +289,27 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
     }
 
     /**
-     * @return string
+     * @return string|null
      */
-    public function getPlainPassword(): string
+    public function getPlainPassword(): ?string
     {
-        return $this->plain_password;
+        return $this->plainPassword;
     }
 
     /**
-     * @param string $plain_password
+     * @param string $plainPassword
      * @return User
      */
-    public function setPlainPassword(string $plain_password): self
+    public function setPlainPassword(string $plainPassword): self
     {
-        $this->plain_password = $plain_password;
+        $this->plainPassword = $plainPassword;
 
         return $this;
     }
 
     public function eraseCredentials(): void
     {
-        $this->plain_password = null;
+        $this->plainPassword = null;
     }
 
     /**
