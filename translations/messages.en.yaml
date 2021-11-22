@@ -1,0 +1,23 @@
+#EMAILS#
+Email.General.Hello: Hello
+Email.Messages.Registration.Confirm.Email.Address.Title: Please confirm your email address
+Email.Messages.Registration.Confirm.Email.Address.Body: To confirm your registration please click on link
+Email.Messages.Registration.Confirm.Email.Address.Confirm: Confirm registration
+Email.Messages.User.Forgot.Password.Title: Request for password change
+Email.Messages.User.Forgot.Password.Body: To change your password please click on link
+Email.Messages.User.Forgot.Password.Confirm: Change password
+
+#EXCEPTIONS#
+Exception.Auth.Invalid.Credentials: Invalid credentials
+Exception.Auth.Register.User.Wait.Time: You already registered user, please wait some time and try again!
+Exception.Auth.Register.User.Email.Already.Exist: User with same email already exists.
+Exception.Refresh.Token.Not.Sent: Refresh token not sent
+Exception.Refresh.Token.Not.Found: Refresh token not found
+Exception.Refresh.Token.Not.Exipred: Refresh token expired
+Exception.Auth.Register.Security.Answer.Invalid: Invalid security answer
+Exception.Auth.Confirm.Email.Token.Not.Sent: Validation token not provided
+Exception.Auth.Confirm.Email.Token.Invalid: Invalid validation token
+Exception.Auth.Confirm.Email.Token.Expired: Validation token has been expired. Please request new one.
+Exception.Auth.Forgot.Password.Email.Not.Sent: Email address is not provided
+Exception.Auth.Reset.Password.Token.Not.Found: Reset password token not found
+Exception.Auth.Reset.Password.Token.Expired: Reset password token has been expired. Please request new one.

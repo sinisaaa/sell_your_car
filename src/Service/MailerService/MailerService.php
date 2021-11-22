@@ -2,30 +2,35 @@
 
 declare(strict_types=1);
 
-namespace App\Service;
+namespace App\Service\MailerService;
 
+use App\Helper\EnvironmentHelper;
 use App\Helper\Mailer\EmailMessage;
+use RuntimeException;
 use Symfony\Component\Mailer\Exception\TransportExceptionInterface;
 use Symfony\Component\Mailer\MailerInterface;
 use Symfony\Component\Mime\Email;
-use Twig\Environment;
 
-final class MailerService
+final class MailerService implements LocalMailerInterface
 {
 
     /**
      * MailerService constructor.
      * @param MailerInterface $mailer
+     * @param EnvironmentHelper $environmentHelper
      * @param string $fromEmail
      * @param string $fromEmailName
      */
     public function __construct(
         private MailerInterface $mailer,
-        private Environment $twig,
+        private EnvironmentHelper $environmentHelper,
         private string $fromEmail,
-        private string $fromEmailName
+        private string $fromEmailName,
     )
     {
+        if ($this->environmentHelper->isInTestMode()) {
+            throw new RuntimeException('Mailer service can not be initialized in test environment');
+        }
     }
 
     /**

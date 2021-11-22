@@ -19,9 +19,11 @@ class UserRegisterAPITest extends AbstractAPITestCase
     public function formDataValidationErrors_DP(): array
     {
         return [
-            [['name' => 'New User', 'plainPassword' => '123qweQWE'], Response::HTTP_BAD_REQUEST, 'No email'],
-            [['email' => 'new@mail.com', 'plainPassword' => '123qweQWE'], Response::HTTP_BAD_REQUEST, 'No name'],
-            [['email' => 'new@mail.com', 'name' => 'New User'], Response::HTTP_BAD_REQUEST, 'No password'],
+            [['name' => 'New User', 'plainPassword' => '123qweQWE', 'securityQuestion' => '9'], Response::HTTP_BAD_REQUEST, 'No email'],
+            [['email' => 'new@mail.com', 'plainPassword' => '123qweQWE', 'securityQuestion' => '9'], Response::HTTP_BAD_REQUEST, 'No name'],
+            [['email' => 'new@mail.com', 'name' => 'New User', 'securityQuestion' => '9'], Response::HTTP_BAD_REQUEST, 'No password'],
+            [['email' => 'new@mail.com', 'name' => 'New User', 'plainPassword' => '123qweQWE', 'securityQuestion' => 'invalid'], Response::HTTP_BAD_REQUEST, 'Invalid security question'],
+            [['email' => 'new@mail.com', 'name' => 'New User', 'plainPassword' => '123qweQWE'], Response::HTTP_BAD_REQUEST, 'No security question answer'],
         ];
     }
 
@@ -43,9 +45,9 @@ class UserRegisterAPITest extends AbstractAPITestCase
         self::assertSame($responseCode, $this->client->getResponse()->getStatusCode());
     }
 
-    /**
- * @throws JsonException
- */
+     /**
+     * @throws JsonException
+     */
     public function testCreateSuccess(): void
     {
         $locationRepo = static::getContainer()->get(LocationRepository::class);
@@ -65,6 +67,7 @@ class UserRegisterAPITest extends AbstractAPITestCase
                 'plainPassword' => '123qweQWE',
                 'address' => 'Address 16',
                 'phone' => '011233548',
+                'securityQuestion' => '9'
             ], JSON_THROW_ON_ERROR)
         );
 
@@ -99,6 +102,7 @@ class UserRegisterAPITest extends AbstractAPITestCase
                 'plainPassword' => '123qweQWE',
                 'address' => 'Address 16',
                 'phone' => '011233548',
+                'securityQuestion' => '9'
             ], JSON_THROW_ON_ERROR)
         );
 

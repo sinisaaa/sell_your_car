@@ -1,7 +1,0 @@
-services:
-    bus.listener.record_events:
-        class: App\EventListener\EventRecorderListener
-        autowire: true
-        public: true
-        tags:
-            - { name: event_subscriber, subscribes_to: App\Event\UserRegisteredEvent, method: recordUserRegisteredEvent }

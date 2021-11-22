@@ -15,6 +15,7 @@ use Symfony\Component\HttpKernel\Exception\NotFoundHttpException;
 use Symfony\Component\HttpKernel\Exception\UnauthorizedHttpException;
 use Symfony\Component\Routing\Annotation\Route;
 use FOS\RestBundle\Controller\Annotations\View as ViewAnnotation;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 final class UserTokenController extends BaseController
 {
@@ -22,9 +23,14 @@ final class UserTokenController extends BaseController
     /**
      * UserTokenController constructor.
      * @param JWTTokenManagerInterface $tokenManager
+     * @param TranslatorInterface $translator
      * @param string $jwtRefreshTokenTTL
      */
-    public function __construct(private JWTTokenManagerInterface $tokenManager, private string $jwtRefreshTokenTTL)
+    public function __construct(
+        private JWTTokenManagerInterface $tokenManager,
+        private TranslatorInterface $translator,
+        private string $jwtRefreshTokenTTL
+    )
     {
     }
 
@@ -77,18 +83,18 @@ final class UserTokenController extends BaseController
     public function refreshTokenAction(Request $request): ApiView
     {
         if (!($refreshToken = $request->get('refreshToken'))) {
-            throw new BadRequestHttpException('Refresh token not sent!');
+            throw new BadRequestHttpException($this->translator->trans('Exception.Refresh.Token.Not.Sent'));
         }
 
         $em = $this->getDoctrine()->getManager();
         $token = $em->getRepository(UserToken::class)->findOneBy(['refreshToken' => $refreshToken]);
 
         if (null === $token) {
-            throw new NotFoundHttpException('Refresh token not found');
+            throw new NotFoundHttpException($this->translator->trans('Exception.Refresh.Token.Not.Found'));
         }
 
         if ($token->isRefreshExpired((int)$this->jwtRefreshTokenTTL)) {
-            throw new UnauthorizedHttpException('Refresh token expired');
+            throw new UnauthorizedHttpException($this->translator->trans('Exception.Refresh.Token.Not.Exipred'));
         }
 
         $generatedToken = $this->tokenManager->create($token->getUser());

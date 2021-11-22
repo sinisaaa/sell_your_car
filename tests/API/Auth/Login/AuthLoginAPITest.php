@@ -1,8 +1,8 @@
 <?php
 
+declare(strict_types=1);
 
 namespace App\Tests\API\Auth\Login;
-
 
 use App\Tests\AbstractAPITestCase;
 use JsonException;
@@ -94,4 +94,28 @@ class AuthLoginAPITest extends AbstractAPITestCase
         self::assertSame(Response::HTTP_FORBIDDEN, $this->client->getResponse()->getStatusCode());
         self::assertSame($response['detail'], 'Invalid credentials');
     }
+
+    /**
+     * @throws JsonException
+     */
+    public function testLoginFailedInactiveUserPassword(): void
+    {
+        $this->client->request(
+            'POST',
+            '/api/login',
+            [],
+            [],
+            ['CONTENT_TYPE' => 'application/json'],
+            json_encode([
+                'email' => 'inactive@mail.com',
+                'password' => '123qweQWE',
+            ], JSON_THROW_ON_ERROR)
+        );
+
+        $response = json_decode($this->client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
+
+        self::assertSame(Response::HTTP_FORBIDDEN, $this->client->getResponse()->getStatusCode());
+        self::assertSame($response['detail'], 'Invalid credentials');
+    }
+
 }

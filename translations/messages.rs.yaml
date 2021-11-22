@@ -1,0 +1,23 @@
+# EMAILS #
+Email.General.Hello: Zdravo
+Email.Messages.Registration.Confirm.Email.Address.Title: Molimo potvrdite vasu email adresu
+Email.Messages.Registration.Confirm.Email.Address.Body: Da biste potvrdili Vasu email adresu molimo kliknite na link
+Email.Messages.Registration.Confirm.Email.Address.Confirm: Potvrdite adresu
+Email.Messages.User.Forgot.Password.Title: Zahtev za promenu korisnicke lozinke
+Email.Messages.User.Forgot.Password.Body: Za promenu korisnicke lozinke molimo kliknite na link
+Email.Messages.User.Forgot.Password.Confirm: Promeni lozinku
+
+# EXCEPTIONS #
+Exception.Auth.Invalid.Credentials: Neispravni kredencijali
+Exception.Auth.Register.User.Wait.Time: Vec ste registrovali korisnika, molimo Vas sacekajte odredjeni period pre slanja novog zahteva!
+Exception.Auth.Register.User.Email.Already.Exist: Korisnik sa istom email adresom vec postoji.
+Exception.Refresh.Token.Not.Sent: Refresh token nije poslat
+Exception.Refresh.Token.Not.Found: Refresh token nije pronadjen
+Exception.Refresh.Token.Not.Exipred: Refresh token je istekao
+Exception.Auth.Register.Security.Answer.Invalid: Neispravno sigurnosno pitanje
+Exception.Auth.Confirm.Email.Token.Not.Sent: Validacijski token nije prosledjen
+Exception.Auth.Confirm.Email.Token.Invalid: Validacijski token je neispravan
+Exception.Auth.Confirm.Email.Token.Expired: Validacijski token je istekao, molimo Vas zatrazite novi.
+Exception.Auth.Forgot.Password.Email.Not.Sent: Email adresa nije prosledjena
+Exception.Auth.Reset.Password.Token.Not.Found: Token za promenu lozinke nije pronadjen
+Exception.Auth.Reset.Password.Token.Expired: Token za promenu lozinke je istekao, molimo Vas zatrazite novi.

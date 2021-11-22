@@ -85,6 +85,8 @@ class CreateAdminCommand extends Command
             $adminRole
         );
 
+        $user->setActive(true);
+
         $this->em->persist($user);
         $this->em->flush();
 

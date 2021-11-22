@@ -69,9 +69,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
      * @Assert\NotBlank(message="Account.Password.Empty", allowNull=true)
      * @Assert\Length(
      *      min = 8,
-     *      minMessage = "Password must be at least 8 characters long",
+     *      minMessage = "Password.Min.Length",
      * )
-     * @Assert\Regex("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).+$/")
+     * @Assert\Regex("/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).+$/", message="Password.Requirement")
      *
      * @var string|null
      */
@@ -111,10 +111,10 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
     private ?DateTimeInterface $lastLogin = null;
 
     /**
-     * @ORM\Column(type="boolean", options={"default": true})
+     * @ORM\Column(type="boolean", options={"default": false})
      * @var boolean
      */
-    private bool $active = true;
+    private bool $active = false;
 
     /**
      * @ORM\ManyToOne(targetEntity=Location::class)
@@ -235,9 +235,9 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
     }
 
     /**
-     * @param string $password
+     * @param null|string $password
      */
-    public function setPassword(string $password): void
+    public function setPassword(?string $password): void
     {
         $this->password = $password;
     }

@@ -9,7 +9,7 @@ use App\Event\UserRegisteredEvent;
 use App\Helper\IPAddressHelper;
 use Doctrine\ORM\EntityManagerInterface;
 
-class EventRecorderListener
+final class EventRecorderListener
 {
 
     /**

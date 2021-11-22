@@ -43,6 +43,14 @@ class UserTokenFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
-        return 3;
+        return self::getOrderNumber();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getOrderNumber(): int
+    {
+        return UserFixtures::getOrderNumber() + 1;
     }
 }

@@ -32,6 +32,14 @@ class LocationFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
-        return 5;
+        return self::getOrderNumber();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getOrderNumber(): int
+    {
+        return RegionFixtures::getOrderNumber() + 1;
     }
 }

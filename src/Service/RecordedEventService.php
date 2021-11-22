@@ -9,7 +9,7 @@ use App\Helper\IPAddressHelper;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
 
-class RecordedEventService
+final class RecordedEventService
 {
 
     /**

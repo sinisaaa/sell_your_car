@@ -26,7 +26,7 @@ security:
                 success_handler: lexik_jwt_authentication.handler.authentication_success
                 failure_handler: lexik_jwt_authentication.handler.authentication_failure
         public:
-            pattern: ^/api/token/refresh|^/api/register
+            pattern: ^/api/token/refresh|^/api/register|^/api/confirm-email|^/api/forgot-password|^/api/change-password
             stateless: true
             security: false
         api:

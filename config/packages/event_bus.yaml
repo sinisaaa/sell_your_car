@@ -1,0 +1,15 @@
+services:
+    bus.listener.record_events:
+        class: App\EventListener\EventRecorderListener
+        autowire: true
+        public: true
+        tags:
+            - { name: event_subscriber, subscribes_to: App\Event\UserRegisteredEvent, method: recordUserRegisteredEvent }
+
+    bus.listener.notifications:
+        class: App\EventListener\NotificationsListener
+        autowire: true
+        public: true
+        tags:
+            - { name: event_subscriber, subscribes_to: App\Event\UserRegisteredEvent, method: sendUserCreatedNotifications }
+            - { name: event_subscriber, subscribes_to: App\Event\UserForgotPasswordEvent, method: sendForgotPasswordNotifications }

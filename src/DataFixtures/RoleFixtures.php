@@ -33,6 +33,14 @@ class RoleFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
+        return self::getOrderNumber();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getOrderNumber(): int
+    {
         return 1;
     }
 }

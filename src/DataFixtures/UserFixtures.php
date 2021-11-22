@@ -36,11 +36,19 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
                 'email' => 'user@mail.com',
                 'name' => 'Regular User',
                 'role_reference_name' => 'role_user',
+                'active' => true
             ],
             [
                 'email' => 'logout@mail.com',
                 'name' => 'Logout User',
                 'role_reference_name' => 'role_user',
+                'active' => true
+            ],
+            [
+                'email' => 'inactive@mail.com',
+                'name' => 'Inactive User',
+                'role_reference_name' => 'role_user',
+                'active' => false
             ],
         ];
 
@@ -49,7 +57,8 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
                 $manager,
                 $user['email'],
                 $user['name'],
-                $user['role_reference_name']
+                $user['role_reference_name'],
+                $user['active']
             );
         }
     }
@@ -59,17 +68,20 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
      * @param string $email
      * @param string $name
      * @param string $roleReferenceName
+     * @param bool $active
      */
     private function createUser(
         ObjectManager $manager,
         string $email,
         string $name,
         string $roleReferenceName,
+        bool $active
     ): void
     {
         /** @var Role $role */
         $role = $this->getReference($roleReferenceName);
         $user = $this->userService->createUser($email, $name, '123qweQWE', $role);
+        $user->setActive($active);
 
         $this->encodeService->encodeUserPassword($user);
 
@@ -84,6 +96,14 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
-        return 2;
+        return self::getOrderNumber();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getOrderNumber(): int
+    {
+        return RoleFixtures::getOrderNumber() + 1;
     }
 }

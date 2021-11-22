@@ -13,6 +13,7 @@ use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\NotBlank;
 use Symfony\Component\Validator\Constraints\Regex;
+use Symfony\Contracts\Translation\TranslatorInterface;
 
 class UserRegisterType extends AbstractType
 {
@@ -33,9 +34,10 @@ class UserRegisterType extends AbstractType
                 'multiple' => false
             ])
             ->add('plainPassword', TextType::class, [
-                'constraints' => [new NotBlank(), new Regex('/^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?!.*\s).+$/')]
+                'constraints' => [
+                    new NotBlank()
                 ]
-            );
+            ]);
     }
 
     /**
@@ -45,7 +47,8 @@ class UserRegisterType extends AbstractType
     {
         $resolver->setDefaults([
             'data_class' => User::class,
-            'csrf_protection' => false
+            'csrf_protection' => false,
+            'allow_extra_fields' => true
         ]);
     }
 

@@ -4,7 +4,7 @@ declare(strict_types=1);
 
 namespace App\Helper;
 
-class IPAddressHelper
+final class IPAddressHelper
 {
 
     /**

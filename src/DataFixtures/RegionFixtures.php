@@ -28,6 +28,14 @@ class RegionFixtures extends Fixture implements OrderedFixtureInterface
      */
     public function getOrder(): int
     {
-        return 4;
+        return self::getOrderNumber();
+    }
+
+    /**
+     * @return int
+     */
+    public static function getOrderNumber(): int
+    {
+        return UserTokenFixtures::getOrderNumber() + 1;
     }
 }

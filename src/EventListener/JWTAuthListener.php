@@ -17,7 +17,7 @@ use Symfony\Component\HttpFoundation\Response;
 /**
  * Class JWTAuthListener.
  */
-class JWTAuthListener
+final class JWTAuthListener
 {
 
     /**
