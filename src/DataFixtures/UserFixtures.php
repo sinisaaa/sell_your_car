@@ -50,6 +50,12 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
                 'role_reference_name' => 'role_user',
                 'active' => false
             ],
+            [
+                'email' => 'sender@mail.com',
+                'name' => 'Email Sender',
+                'role_reference_name' => 'role_user',
+                'active' => true
+            ],
         ];
 
         foreach ($users as $user) {

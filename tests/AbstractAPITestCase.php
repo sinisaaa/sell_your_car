@@ -22,7 +22,10 @@ abstract class AbstractAPITestCase extends WebTestCase
      */
     public function setUp(): void
     {
-        $this->client = static::createClient();
+        if (null === $this->client) {
+            self::ensureKernelShutdown();
+            $this->client = static::createClient();
+        }
     }
 
     /**
@@ -45,6 +48,7 @@ abstract class AbstractAPITestCase extends WebTestCase
     /**
      * @param string $username
      * @param string $password
+     *
      * @throws JsonException
      */
     private function sendLoginRequest(

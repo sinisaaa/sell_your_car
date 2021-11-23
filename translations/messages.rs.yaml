@@ -21,3 +21,6 @@ Exception.Auth.Confirm.Email.Token.Expired: Validacijski token je istekao, molim
 Exception.Auth.Forgot.Password.Email.Not.Sent: Email adresa nije prosledjena
 Exception.Auth.Reset.Password.Token.Not.Found: Token za promenu lozinke nije pronadjen
 Exception.Auth.Reset.Password.Token.Expired: Token za promenu lozinke je istekao, molimo Vas zatrazite novi.
+Exception.Chat.Body.Empty: Sadrzaj poruke ne moze biti prazan
+Exception.Chat.Chat.Not.Found: Konverzacija nije pronadjena
+Exception.Chat.User.Not.Have.Permissions: Korisnik nema prava pristupa konverzaciji

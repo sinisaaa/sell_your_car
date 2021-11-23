@@ -153,6 +153,8 @@
       <excludeFolder url="file://$MODULE_DIR$/vendor/simple-bus/message-bus" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/simple-bus/symfony-bridge" />
       <excludeFolder url="file://$MODULE_DIR$/vendor/simple-bus/doctrine-orm-bridge" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-components" />
+      <excludeFolder url="file://$MODULE_DIR$/vendor/knplabs/knp-paginator-bundle" />
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />

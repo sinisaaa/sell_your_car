@@ -37,7 +37,6 @@ class AuthChangePasswordAPITest extends AbstractAPITestCase
     {
         /** @var UserForgotPasswordTokenRepository $tokenRepo */
         $tokenRepo = static::getContainer()->get(UserForgotPasswordTokenRepository::class);
-
         $token = $tokenRepo->findBy([], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(
@@ -53,7 +52,6 @@ class AuthChangePasswordAPITest extends AbstractAPITestCase
         );
 
         self::assertSame(Response::HTTP_BAD_REQUEST, $this->client->getResponse()->getStatusCode());
-
     }
 
     /**
@@ -63,7 +61,6 @@ class AuthChangePasswordAPITest extends AbstractAPITestCase
     {
         /** @var UserForgotPasswordTokenRepository $tokenRepo */
         $tokenRepo = static::getContainer()->get(UserForgotPasswordTokenRepository::class);
-
         $token = $tokenRepo->findBy([], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(
@@ -133,7 +130,6 @@ class AuthChangePasswordAPITest extends AbstractAPITestCase
     {
         /** @var UserForgotPasswordTokenRepository $tokenRepo */
         $tokenRepo = static::getContainer()->get(UserForgotPasswordTokenRepository::class);
-
         $expiredToken = $tokenRepo->findBy([], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(

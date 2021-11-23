@@ -33,14 +33,14 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user.get"})
+     * @Groups({"user.get", "user.rel"})
      * @var string
      */
     private string $name;
 
     /**
      * @ORM\Column(type="string", length=255)
-     * @Groups({"user.get"})
+     * @Groups({"user.get", "user.rel"})
      * @var string
      */
     private string $email;

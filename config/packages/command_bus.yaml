@@ -1,0 +1,8 @@
+services:
+    bus.handler.app.remove_chat:
+        class: App\CommandBus\Chat\Remove\ChatRemoveCommandHandler
+        autowire: true
+        public: true
+        tags:
+            - { name: command_handler, handles: App\CommandBus\Chat\Remove\ChatRemoveCommand }
+

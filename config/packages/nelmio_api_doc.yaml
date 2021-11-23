@@ -22,6 +22,22 @@ nelmio_api_doc:
                     refreshToken:
                         type: string
                         example: 21a185fcf0f318654166fec68370631c9f0bc223
+            MetaPagination:
+                type: object
+                properties:
+                    current:
+                        type: number
+                        example: 1
+                    numItemsPerPage:
+                        type: number
+                        example: 10
+                    pageCount:
+                        type: number
+                        example: 1
+                    totalCount:
+                        type: number
+                        example: 3
+
     areas: # to filter documented areas
         path_patterns:
             - ^/(?!_profiler)(?!_wdt)(?!_error)(?!doc)(?!api/doc)
