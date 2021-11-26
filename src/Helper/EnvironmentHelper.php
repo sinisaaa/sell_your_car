@@ -8,6 +8,7 @@ final class EnvironmentHelper
 {
 
     public const ENV_TEST = 'test';
+    public const ENV_PROD = 'prod';
 
     /**
      * EnvironmentHelper constructor.
@@ -31,5 +32,13 @@ final class EnvironmentHelper
     public function isInTestMode(): bool
     {
         return $this->environment === self::ENV_TEST;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isInProductionMode(): bool
+    {
+        return $this->environment === self::ENV_PROD;
     }
 }

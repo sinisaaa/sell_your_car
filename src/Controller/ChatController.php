@@ -242,15 +242,22 @@ final class ChatController extends BaseController
      *   ),
      *   @SWG\Parameter(
      *     name="ids",
-     *     in="path",
-     *     required=true,
-     *     type="integer",
-     *     description="Unique identifiers of chats"
-     *   ),
+     *     description="Every element in array represent chat id",
+     *     type="array",
+     *     in="body",
+     *     @SWG\Items(type="integer"),
+     *     collectionFormat="multi",
+     *     @SWG\Schema(
+     *        type="array",
+     *        @SWG\Items(type="integer"),
+     *        example= {1,2,3}
+     *       )
+     *    )
      * )
      * @ViewAnnotation(statusCode=204)
      * @Route("/api/chats", methods={"DELETE"})
      *
+     * @param Request $request
      * @return ApiView
      */
     public function removeChatsAction(Request $request): ApiView

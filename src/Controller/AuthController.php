@@ -6,6 +6,7 @@ namespace App\Controller;
 
 use App\Controller\Base\BaseController;
 use App\Entity\RecordedEvent;
+use App\Entity\Role;
 use App\Entity\User;
 use App\Entity\UserEmailConfirmToken;
 use App\Entity\UserForgotPasswordToken;
@@ -16,6 +17,7 @@ use App\Form\Model\UserChangePasswordModel;
 use App\Form\Type\UserChangePasswordType;
 use App\Form\Type\UserLoginType;
 use App\Form\Type\UserRegisterType;
+use App\Helper\ValueObjects\RoleCode;
 use App\Service\EncodeService;
 use App\Service\RecordedEventService;
 use DateTime;
@@ -243,6 +245,10 @@ final class AuthController extends BaseController
 
         $user->setCreatedOn(new DateTime());
         $emailToken = UserEmailConfirmToken::create($user);
+
+        /** @var Role $userRole */
+        $userRole = $this->em->getRepository(Role::class)->findOneBy(['code' => RoleCode::USER]);
+        $user->addRole($userRole);
 
         $this->em->persist($user);
         $this->em->persist($emailToken);

@@ -23,6 +23,10 @@ use Symfony\Component\Validator\Constraints as Assert;
  */
 class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyPasswordAuthenticatedUserInterface
 {
+
+    public const TYPE_USER = 'user';
+    public const TYPE_CAR_DEALER = 'car_dealer';
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -122,6 +126,12 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
      * @var Location|null
      */
     private ?Location $location;
+
+    /**
+     * @ORM\Column(type="string", length=255)
+     * @Groups({"user.get"})
+     */
+    private string $type = self::TYPE_USER;
 
     /**
      * User constructor.
@@ -411,6 +421,25 @@ class User implements UserInterface, PasswordAuthenticatedUserInterface, LegacyP
     public function setLocation(?Location $location): self
     {
         $this->location = $location;
+
+        return $this;
+    }
+
+    /**
+     * @return string
+     */
+    public function getType(): string
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param string $type
+     * @return $this
+     */
+    public function setType(string $type): self
+    {
+        $this->type = $type;
 
         return $this;
     }

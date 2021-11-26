@@ -4,11 +4,11 @@ declare(strict_types=1);
 
 namespace App\Entity;
 
+use App\Helper\Exceptions\EntityException;
 use App\Repository\RecordedEventRepository;
 use DateTime;
 use DateTimeInterface;
 use Doctrine\ORM\Mapping as ORM;
-use InvalidArgumentException;
 
 /**
  * @ORM\Entity(repositoryClass=RecordedEventRepository::class)
@@ -59,11 +59,12 @@ class RecordedEvent
     /**
      * @param string $type
      * @return $this
+     * @throws EntityException
      */
     public function setType(string $type): self
     {
         if (false === in_array($type, self::getValidTypes())) {
-            throw new InvalidArgumentException('Event type is invalid');
+            throw new EntityException('Event type is invalid');
         }
 
         $this->type = $type;

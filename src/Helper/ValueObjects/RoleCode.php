@@ -10,6 +10,7 @@ final class RoleCode
 {
     public const ADMIN = 'ROLE_ADMIN';
     public const USER = 'ROLE_USER';
+    public const CAR_DEALER = 'ROLE_CAR_DEALER';
 
     /**
      * RoleCode constructor.
@@ -59,7 +60,8 @@ final class RoleCode
     {
         return [
             self::ADMIN,
-            self::USER
+            self::USER,
+            self::CAR_DEALER
         ];
     }
 }
