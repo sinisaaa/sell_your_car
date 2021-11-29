@@ -30,6 +30,39 @@ services:
         tags:
             - { name: doctrine.event_subscriber }
 
+    app.query_filter.query_filter_register:
+        class: App\Helper\QueryFilter\QueryFilterRegister
+        public: true
+        calls:
+            - [ addFilter, [ "@app.query_filter.like_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.equals_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.greater_than_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.is_null_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.in_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.has_one_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.has_many_filter" ] ]
+
+    app.query_filter.like_filter:
+        class: App\Helper\QueryFilter\Filters\LikeFilter
+
+    app.query_filter.equals_filter:
+        class: App\Helper\QueryFilter\Filters\EqualsFilter
+
+    app.query_filter.greater_than_filter:
+        class: App\Helper\QueryFilter\Filters\GreaterThanFilter
+
+    app.query_filter.is_null_filter:
+        class: App\Helper\QueryFilter\Filters\IsNullFilter
+
+    app.query_filter.in_filter:
+        class: App\Helper\QueryFilter\Filters\InFilter
+
+    app.query_filter.has_one_filter:
+        class: App\Helper\QueryFilter\Filters\HasOneFilter
+
+    app.query_filter.has_many_filter:
+        class: App\Helper\QueryFilter\Filters\HasManyFilter
+
     # makes classes in src/ available to be used as services
     # this creates a service per class whose id is the fully-qualified class name
     App\:

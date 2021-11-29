@@ -39,6 +39,12 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
                 'active' => true
             ],
             [
+                'email' => 'admin@mail.com',
+                'name' => 'Admin User',
+                'role_reference_name' => 'role_admin',
+                'active' => true
+            ],
+            [
                 'email' => 'logout@mail.com',
                 'name' => 'Logout User',
                 'role_reference_name' => 'role_user',
@@ -53,6 +59,12 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
             [
                 'email' => 'sender@mail.com',
                 'name' => 'Email Sender',
+                'role_reference_name' => 'role_user',
+                'active' => true
+            ],
+            [
+                'email' => 'userForPromote@mail.com',
+                'name' => 'User for promote',
                 'role_reference_name' => 'role_user',
                 'active' => true
             ],

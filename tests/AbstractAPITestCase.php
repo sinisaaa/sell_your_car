@@ -51,6 +51,23 @@ abstract class AbstractAPITestCase extends WebTestCase
      *
      * @throws JsonException
      */
+    public function loginAsAdmin(
+        string $username = 'admin@mail.com',
+        string $password = '123qweQWE',
+    ): void
+    {
+        $this->sendLoginRequest(
+            $username,
+            $password
+        );
+    }
+
+    /**
+     * @param string $username
+     * @param string $password
+     *
+     * @throws JsonException
+     */
     private function sendLoginRequest(
         string $username,
         string $password
