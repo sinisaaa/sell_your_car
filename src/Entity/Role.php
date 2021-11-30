@@ -15,6 +15,7 @@ class Role
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"role.get"})
      * @var int|null
      */
     private ?int $id;

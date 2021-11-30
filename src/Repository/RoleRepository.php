@@ -19,32 +19,23 @@ class RoleRepository extends ServiceEntityRepository
         parent::__construct($registry, Role::class);
     }
 
-    // /**
-    //  * @return Role[] Returns an array of Role objects
-    //  */
-    /*
-    public function findByExampleField($value)
+    /**
+     * @param string $search
+     * @return array<Role>
+     */
+    public function findForAutoComplete(string $search = ''): array
     {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('r.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
+        $qb = $this->createQueryBuilder('r');
 
-    /*
-    public function findOneBySomeField($value): ?Role
-    {
-        return $this->createQueryBuilder('r')
-            ->andWhere('r.exampleField = :val')
-            ->setParameter('val', $value)
+        if ('' !== $search) {
+            $qb->andWhere($qb->expr()->like('r.name', ':value') . ' OR ' . $qb->expr()->like('r.code', ':value'))
+                ->setParameter('value', $search . '%');
+        }
+
+        return $qb->setMaxResults(100)
             ->getQuery()
-            ->getOneOrNullResult()
-        ;
+            ->getResult();
     }
-    */
+
+
 }
