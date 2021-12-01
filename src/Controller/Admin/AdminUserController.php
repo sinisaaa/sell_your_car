@@ -45,9 +45,7 @@ final class AdminUserController extends BaseController
      *     @SWG\Response(
      *     response= 200,
      *     description="Updated user",
-     *     @SWG\Schema(
-     *          @SWG\Property(property="items", type="array", @Model(type=User::class, groups={"user.get", "user_location.get", "user_roles.get", "location.get", "location_region.get", "region.get"})),
-     *          )
+     *     @Model(type=User::class, groups={"user.get", "user_location.get", "user_roles.get", "location.get", "location_region.get", "region.get"}),
      *     ),
      *     @SWG\Response(
      *          response = 401,
