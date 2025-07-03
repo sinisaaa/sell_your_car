@@ -1,0 +1,380 @@
+<!DOCTYPE html>
+<html lang="en">
+ <head>
+  <meta charset="UTF-8">
+  <title>Dashboard for /home/sinisa/Projects/autobum/src/Entity</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link href="../_css/bootstrap.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/nv.d3.min.css" rel="stylesheet" type="text/css">
+  <link href="../_css/style.css" rel="stylesheet" type="text/css">
+  <link href="../_css/custom.css" rel="stylesheet" type="text/css">
+ </head>
+ <body>
+  <header>
+   <div class="container-fluid">
+    <div class="row">
+     <div class="col-md-12">
+      <nav aria-label="breadcrumb">
+       <ol class="breadcrumb">
+         <li class="breadcrumb-item"><a href="../index.html">/home/sinisa/Projects/autobum/src</a></li>
+         <li class="breadcrumb-item"><a href="index.html">Entity</a></li>
+         <li class="breadcrumb-item active">(Dashboard)</li>
+
+       </ol>
+      </nav>
+     </div>
+    </div>
+   </div>
+  </header>
+  <div class="container-fluid">
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Classes</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="classCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="classComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Region.php.html#14">App\Entity\Region</a></td><td class="text-right">20%</td></tr>
+       <tr><td><a href="Location.php.html#12">App\Entity\Location</a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="Role.php.html#12">App\Entity\Role</a></td><td class="text-right">30%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#18">App\Entity\ArticleImage</a></td><td class="text-right">56%</td></tr>
+       <tr><td><a href="Article.php.html#17">App\Entity\Article</a></td><td class="text-right">69%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#16">App\Entity\RecordedEvent</a></td><td class="text-right">70%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#16">App\Entity\ChatMessage</a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="User.php.html#24">App\Entity\User</a></td><td class="text-right">72%</td></tr>
+       <tr><td><a href="Chat.php.html#17">App\Entity\Chat</a></td><td class="text-right">74%</td></tr>
+       <tr><td><a href="UserRating.php.html#14">App\Entity\UserRating</a></td><td class="text-right">76%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Class</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Article.php.html#17">App\Entity\Article</a></td><td class="text-right">152</td></tr>
+       <tr><td><a href="User.php.html#24">App\Entity\User</a></td><td class="text-right">111</td></tr>
+       <tr><td><a href="Region.php.html#14">App\Entity\Region</a></td><td class="text-right">99</td></tr>
+       <tr><td><a href="ArticleImage.php.html#18">App\Entity\ArticleImage</a></td><td class="text-right">80</td></tr>
+       <tr><td><a href="Chat.php.html#17">App\Entity\Chat</a></td><td class="text-right">41</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#16">App\Entity\RecordedEvent</a></td><td class="text-right">12</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-12">
+     <h2>Methods</h2>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Coverage Distribution</h3>
+     <div id="methodCoverageDistribution" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Complexity</h3>
+     <div id="methodComplexity" style="height: 300px;">
+       <svg></svg>
+     </div>
+    </div>
+   </div>
+   <div class="row">
+    <div class="col-md-6">
+     <h3>Insufficient Coverage</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right">Coverage</th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Article.php.html#175"><abbr title="App\Entity\Article::setId">setId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#268"><abbr title="App\Entity\Article::setFeaturedPending">setFeaturedPending</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#306"><abbr title="App\Entity\Article::setExchange">setExchange</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#363"><abbr title="App\Entity\Article::setNegotiable">setNegotiable</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#382"><abbr title="App\Entity\Article::setFixed">setFixed</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#420"><abbr title="App\Entity\Article::setLocation">setLocation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#477"><abbr title="App\Entity\Article::setSoldAt">setSoldAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#496"><abbr title="App\Entity\Article::setUpdatedAt">setUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#515"><abbr title="App\Entity\Article::setHits">setHits</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#590"><abbr title="App\Entity\Article::addArticleImage">addArticleImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Article.php.html#604"><abbr title="App\Entity\Article::removeArticleImage">removeArticleImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#80"><abbr title="App\Entity\ArticleImage::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#88"><abbr title="App\Entity\ArticleImage::getArticle">getArticle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#126"><abbr title="App\Entity\ArticleImage::getWidth">getWidth</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#145"><abbr title="App\Entity\ArticleImage::getHeight">getHeight</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#164"><abbr title="App\Entity\ArticleImage::getExtension">getExtension</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#183"><abbr title="App\Entity\ArticleImage::getImageOrder">getImageOrder</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#202"><abbr title="App\Entity\ArticleImage::getUpdatedAt">getUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#211"><abbr title="App\Entity\ArticleImage::setUpdatedAt">setUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#264"><abbr title="App\Entity\ArticleImage::getSmallGalleryImage">getSmallGalleryImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ArticleImage.php.html#279"><abbr title="App\Entity\ArticleImage::getBigGalleryImage">getBigGalleryImage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Chat.php.html#155"><abbr title="App\Entity\Chat::setUpdatedAt">setUpdatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Chat.php.html#203"><abbr title="App\Entity\Chat::getDeletedBySender">getDeletedBySender</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Chat.php.html#222"><abbr title="App\Entity\Chat::getDeletedByReceiver">getDeletedByReceiver</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Chat.php.html#250"><abbr title="App\Entity\Chat::addMessage">addMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Chat.php.html#264"><abbr title="App\Entity\Chat::removeMessage">removeMessage</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#72"><abbr title="App\Entity\ChatMessage::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#80"><abbr title="App\Entity\ChatMessage::getBody">getBody</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#99"><abbr title="App\Entity\ChatMessage::getSender">getSender</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#146"><abbr title="App\Entity\ChatMessage::setSeen">setSeen</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#156"><abbr title="App\Entity\ChatMessage::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="ChatMessage.php.html#175"><abbr title="App\Entity\ChatMessage::getChat">getChat</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Location.php.html#56"><abbr title="App\Entity\Location::setCity">setCity</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Location.php.html#75"><abbr title="App\Entity\Location::setRegion">setRegion</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Location.php.html#87"><abbr title="App\Entity\Location::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#46"><abbr title="App\Entity\RecordedEvent::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#54"><abbr title="App\Entity\RecordedEvent::getType">getType</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#78"><abbr title="App\Entity\RecordedEvent::getIpAddress">getIpAddress</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#97"><abbr title="App\Entity\RecordedEvent::getCreatedAt">getCreatedAt</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#47"><abbr title="App\Entity\Region::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#72"><abbr title="App\Entity\Region::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#91"><abbr title="App\Entity\Region::setCountry">setCountry</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#110"><abbr title="App\Entity\Region::addLocation">addLocation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#124"><abbr title="App\Entity\Region::removeLocation">removeLocation</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Region.php.html#138"><abbr title="App\Entity\Region::create">create</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Role.php.html#42"><abbr title="App\Entity\Role::__construct">__construct</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Role.php.html#68"><abbr title="App\Entity\Role::setCode">setCode</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="Role.php.html#87"><abbr title="App\Entity\Role::setName">setName</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#272"><abbr title="App\Entity\User::getCreatedOn">getCreatedOn</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#356"><abbr title="App\Entity\User::removeRole">removeRole</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#388"><abbr title="App\Entity\User::getLastLogin">getLastLogin</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#407"><abbr title="App\Entity\User::getActive">getActive</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#468"><abbr title="App\Entity\User::getArticles">getArticles</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#477"><abbr title="App\Entity\User::addArticle">addArticle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#491"><abbr title="App\Entity\User::removeArticle">removeArticle</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#503"><abbr title="App\Entity\User::getUserRatings">getUserRatings</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#512"><abbr title="App\Entity\User::addUserRating">addUserRating</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="User.php.html#526"><abbr title="App\Entity\User::removeUserRating">removeUserRating</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserEmailConfirmToken.php.html#52"><abbr title="App\Entity\UserEmailConfirmToken::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserForgotPasswordToken.php.html#50"><abbr title="App\Entity\UserForgotPasswordToken::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRating.php.html#52"><abbr title="App\Entity\UserRating::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRating.php.html#60"><abbr title="App\Entity\UserRating::getUser">getUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserRating.php.html#79"><abbr title="App\Entity\UserRating::getRatedUser">getRatedUser</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="UserToken.php.html#61"><abbr title="App\Entity\UserToken::getId">getId</abbr></a></td><td class="text-right">0%</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#64"><abbr title="App\Entity\RecordedEvent::setType">setType</abbr></a></td><td class="text-right">75%</td></tr>
+       <tr><td><a href="User.php.html#454"><abbr title="App\Entity\User::setType">setType</abbr></a></td><td class="text-right">75%</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+    <div class="col-md-6">
+     <h3>Project Risks</h3>
+     <div class="scrollbox">
+      <table class="table">
+       <thead>
+        <tr>
+         <th>Method</th>
+         <th class="text-right"><abbr title="Change Risk Anti-Patterns (CRAP) Index">CRAP</abbr></th>
+        </tr>
+       </thead>
+       <tbody>
+       <tr><td><a href="Article.php.html#604"><abbr title="App\Entity\Article::removeArticleImage">removeArticleImage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Chat.php.html#264"><abbr title="App\Entity\Chat::removeMessage">removeMessage</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Region.php.html#124"><abbr title="App\Entity\Region::removeLocation">removeLocation</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#491"><abbr title="App\Entity\User::removeArticle">removeArticle</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="User.php.html#526"><abbr title="App\Entity\User::removeUserRating">removeUserRating</abbr></a></td><td class="text-right">12</td></tr>
+       <tr><td><a href="Article.php.html#590"><abbr title="App\Entity\Article::addArticleImage">addArticleImage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ArticleImage.php.html#264"><abbr title="App\Entity\ArticleImage::getSmallGalleryImage">getSmallGalleryImage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="ArticleImage.php.html#279"><abbr title="App\Entity\ArticleImage::getBigGalleryImage">getBigGalleryImage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Chat.php.html#250"><abbr title="App\Entity\Chat::addMessage">addMessage</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="Region.php.html#110"><abbr title="App\Entity\Region::addLocation">addLocation</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#477"><abbr title="App\Entity\User::addArticle">addArticle</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="User.php.html#512"><abbr title="App\Entity\User::addUserRating">addUserRating</abbr></a></td><td class="text-right">6</td></tr>
+       <tr><td><a href="RecordedEvent.php.html#64"><abbr title="App\Entity\RecordedEvent::setType">setType</abbr></a></td><td class="text-right">2</td></tr>
+       <tr><td><a href="User.php.html#454"><abbr title="App\Entity\User::setType">setType</abbr></a></td><td class="text-right">2</td></tr>
+
+       </tbody>
+      </table>
+     </div>
+    </div>
+   </div>
+   <footer>
+    <hr/>
+    <p>
+     <small>Generated by <a href="https://github.com/sebastianbergmann/php-code-coverage" target="_top">php-code-coverage 9.2.9</a> using <a href="https://secure.php.net/" target="_top">PHP 8.0.13</a> and <a href="https://phpunit.de/">PHPUnit 9.5.10</a> at Wed Dec 15 16:46:17 UTC 2021.</small>
+    </p>
+   </footer>
+  </div>
+  <script src="../_js/jquery.min.js" type="text/javascript"></script>
+  <script src="../_js/d3.min.js" type="text/javascript"></script>
+  <script src="../_js/nv.d3.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+$(document).ready(function() {
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#classCoverageDistribution svg')
+      .datum(getCoverageDistributionData([0,0,0,1,2,0,1,1,5,0,3,0], "Class Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.multiBarChart();
+    chart.tooltips(false)
+      .showControls(false)
+      .showLegend(false)
+      .reduceXTicks(false)
+      .staggerLabels(true)
+      .yAxis.tickFormat(d3.format('d'));
+
+    d3.select('#methodCoverageDistribution svg')
+      .datum(getCoverageDistributionData([64,0,0,0,0,0,0,0,2,0,0,156], "Method Coverage"))
+      .transition().duration(500).call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getCoverageDistributionData(data, label) {
+    var labels = [
+      '0%',
+      '0-10%',
+      '10-20%',
+      '20-30%',
+      '30-40%',
+      '40-50%',
+      '50-60%',
+      '60-70%',
+      '70-80%',
+      '80-90%',
+      '90-100%',
+      '100%'
+    ];
+    var values = [];
+    $.each(labels, function(key) {
+      values.push({x: labels[key], y: data[key]});
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Cyclomatic Complexity');
+
+    d3.select('#classComplexity svg')
+      .datum(getComplexityData([[69.1358024691358,57,"<a href=\"Article.php.html#17\">App\\Entity\\Article<\/a>"],[56.81818181818182,26,"<a href=\"ArticleImage.php.html#18\">App\\Entity\\ArticleImage<\/a>"],[74.4186046511628,28,"<a href=\"Chat.php.html#17\">App\\Entity\\Chat<\/a>"],[72,14,"<a href=\"ChatMessage.php.html#16\">App\\Entity\\ChatMessage<\/a>"],[30,6,"<a href=\"Location.php.html#12\">App\\Entity\\Location<\/a>"],[70.58823529411765,10,"<a href=\"RecordedEvent.php.html#16\">App\\Entity\\RecordedEvent<\/a>"],[20,13,"<a href=\"Region.php.html#14\">App\\Entity\\Region<\/a>"],[30,6,"<a href=\"Role.php.html#12\">App\\Entity\\Role<\/a>"],[72.5,53,"<a href=\"User.php.html#24\">App\\Entity\\User<\/a>"],[93.33333333333333,9,"<a href=\"UserEmailConfirmToken.php.html#17\">App\\Entity\\UserEmailConfirmToken<\/a>"],[93.33333333333333,9,"<a href=\"UserForgotPasswordToken.php.html#15\">App\\Entity\\UserForgotPasswordToken<\/a>"],[76.92307692307693,9,"<a href=\"UserRating.php.html#14\">App\\Entity\\UserRating<\/a>"],[95.45454545454545,13,"<a href=\"UserToken.php.html#15\">App\\Entity\\UserToken<\/a>"]], 'Class Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  nv.addGraph(function() {
+    var chart = nv.models.scatterChart()
+      .showDistX(true)
+      .showDistY(true)
+      .showLegend(false)
+      .forceX([0, 100]);
+    chart.tooltipContent(function(graph) {
+      return '<p>' + graph.point.class + '</p>';
+    });
+
+    chart.xAxis.axisLabel('Code Coverage (in percent)');
+    chart.yAxis.axisLabel('Method Complexity');
+
+    d3.select('#methodComplexity svg')
+      .datum(getComplexityData([[100,1,"<a href=\"Article.php.html#159\">App\\Entity\\Article::__construct<\/a>"],[100,1,"<a href=\"Article.php.html#167\">App\\Entity\\Article::getId<\/a>"],[0,1,"<a href=\"Article.php.html#175\">App\\Entity\\Article::setId<\/a>"],[100,1,"<a href=\"Article.php.html#183\">App\\Entity\\Article::getTitle<\/a>"],[100,1,"<a href=\"Article.php.html#192\">App\\Entity\\Article::setTitle<\/a>"],[100,1,"<a href=\"Article.php.html#202\">App\\Entity\\Article::getDescription<\/a>"],[100,1,"<a href=\"Article.php.html#211\">App\\Entity\\Article::setDescription<\/a>"],[100,1,"<a href=\"Article.php.html#221\">App\\Entity\\Article::getConditions<\/a>"],[100,1,"<a href=\"Article.php.html#230\">App\\Entity\\Article::setConditions<\/a>"],[100,1,"<a href=\"Article.php.html#240\">App\\Entity\\Article::getPrice<\/a>"],[100,1,"<a href=\"Article.php.html#249\">App\\Entity\\Article::setPrice<\/a>"],[100,1,"<a href=\"Article.php.html#259\">App\\Entity\\Article::getFeaturedPending<\/a>"],[0,1,"<a href=\"Article.php.html#268\">App\\Entity\\Article::setFeaturedPending<\/a>"],[100,1,"<a href=\"Article.php.html#278\">App\\Entity\\Article::getStatus<\/a>"],[100,1,"<a href=\"Article.php.html#287\">App\\Entity\\Article::setStatus<\/a>"],[100,1,"<a href=\"Article.php.html#297\">App\\Entity\\Article::getExchange<\/a>"],[0,1,"<a href=\"Article.php.html#306\">App\\Entity\\Article::setExchange<\/a>"],[100,1,"<a href=\"Article.php.html#316\">App\\Entity\\Article::getUrgent<\/a>"],[100,1,"<a href=\"Article.php.html#325\">App\\Entity\\Article::setUrgent<\/a>"],[100,1,"<a href=\"Article.php.html#335\">App\\Entity\\Article::getDiscontinued<\/a>"],[100,1,"<a href=\"Article.php.html#344\">App\\Entity\\Article::setDiscontinued<\/a>"],[100,1,"<a href=\"Article.php.html#354\">App\\Entity\\Article::getNegotiable<\/a>"],[0,1,"<a href=\"Article.php.html#363\">App\\Entity\\Article::setNegotiable<\/a>"],[100,1,"<a href=\"Article.php.html#373\">App\\Entity\\Article::getFixed<\/a>"],[0,1,"<a href=\"Article.php.html#382\">App\\Entity\\Article::setFixed<\/a>"],[100,1,"<a href=\"Article.php.html#392\">App\\Entity\\Article::getTelephone<\/a>"],[100,1,"<a href=\"Article.php.html#401\">App\\Entity\\Article::setTelephone<\/a>"],[100,1,"<a href=\"Article.php.html#411\">App\\Entity\\Article::getLocation<\/a>"],[0,1,"<a href=\"Article.php.html#420\">App\\Entity\\Article::setLocation<\/a>"],[100,1,"<a href=\"Article.php.html#430\">App\\Entity\\Article::getUser<\/a>"],[100,1,"<a href=\"Article.php.html#439\">App\\Entity\\Article::setUser<\/a>"],[100,1,"<a href=\"Article.php.html#449\">App\\Entity\\Article::getCreatedAt<\/a>"],[100,1,"<a href=\"Article.php.html#458\">App\\Entity\\Article::setCreatedAt<\/a>"],[100,1,"<a href=\"Article.php.html#468\">App\\Entity\\Article::getSoldAt<\/a>"],[0,1,"<a href=\"Article.php.html#477\">App\\Entity\\Article::setSoldAt<\/a>"],[100,1,"<a href=\"Article.php.html#487\">App\\Entity\\Article::getUpdatedAt<\/a>"],[0,1,"<a href=\"Article.php.html#496\">App\\Entity\\Article::setUpdatedAt<\/a>"],[100,1,"<a href=\"Article.php.html#506\">App\\Entity\\Article::getHits<\/a>"],[0,1,"<a href=\"Article.php.html#515\">App\\Entity\\Article::setHits<\/a>"],[100,1,"<a href=\"Article.php.html#525\">App\\Entity\\Article::incrementHitsCounter<\/a>"],[100,1,"<a href=\"Article.php.html#530\">App\\Entity\\Article::getFeaturedFrom<\/a>"],[100,1,"<a href=\"Article.php.html#535\">App\\Entity\\Article::setFeaturedFrom<\/a>"],[100,1,"<a href=\"Article.php.html#545\">App\\Entity\\Article::getFeaturedTo<\/a>"],[100,1,"<a href=\"Article.php.html#554\">App\\Entity\\Article::setFeaturedTo<\/a>"],[100,4,"<a href=\"Article.php.html#565\">App\\Entity\\Article::isFeatured<\/a>"],[100,1,"<a href=\"Article.php.html#573\">App\\Entity\\Article::getValidFeaturedPeriods<\/a>"],[100,1,"<a href=\"Article.php.html#581\">App\\Entity\\Article::getArticleImages<\/a>"],[0,2,"<a href=\"Article.php.html#590\">App\\Entity\\Article::addArticleImage<\/a>"],[0,3,"<a href=\"Article.php.html#604\">App\\Entity\\Article::removeArticleImage<\/a>"],[100,2,"<a href=\"Article.php.html#617\">App\\Entity\\Article::getImageThumb<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#80\">App\\Entity\\ArticleImage::getId<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#88\">App\\Entity\\ArticleImage::getArticle<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#97\">App\\Entity\\ArticleImage::setArticle<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#107\">App\\Entity\\ArticleImage::getName<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#116\">App\\Entity\\ArticleImage::setName<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#126\">App\\Entity\\ArticleImage::getWidth<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#135\">App\\Entity\\ArticleImage::setWidth<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#145\">App\\Entity\\ArticleImage::getHeight<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#154\">App\\Entity\\ArticleImage::setHeight<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#164\">App\\Entity\\ArticleImage::getExtension<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#173\">App\\Entity\\ArticleImage::setExtension<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#183\">App\\Entity\\ArticleImage::getImageOrder<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#192\">App\\Entity\\ArticleImage::setImageOrder<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#202\">App\\Entity\\ArticleImage::getUpdatedAt<\/a>"],[0,1,"<a href=\"ArticleImage.php.html#211\">App\\Entity\\ArticleImage::setUpdatedAt<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#221\">App\\Entity\\ArticleImage::getCreatedAt<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#230\">App\\Entity\\ArticleImage::setCreatedAt<\/a>"],[100,1,"<a href=\"ArticleImage.php.html#241\">App\\Entity\\ArticleImage::getImageFile<\/a>"],[100,2,"<a href=\"ArticleImage.php.html#250\">App\\Entity\\ArticleImage::setImageFile<\/a>"],[0,2,"<a href=\"ArticleImage.php.html#264\">App\\Entity\\ArticleImage::getSmallGalleryImage<\/a>"],[0,2,"<a href=\"ArticleImage.php.html#279\">App\\Entity\\ArticleImage::getBigGalleryImage<\/a>"],[100,2,"<a href=\"ArticleImage.php.html#297\">App\\Entity\\ArticleImage::getImageThumb<\/a>"],[100,1,"<a href=\"Chat.php.html#92\">App\\Entity\\Chat::__construct<\/a>"],[100,1,"<a href=\"Chat.php.html#100\">App\\Entity\\Chat::getId<\/a>"],[100,1,"<a href=\"Chat.php.html#108\">App\\Entity\\Chat::getSubject<\/a>"],[100,1,"<a href=\"Chat.php.html#117\">App\\Entity\\Chat::setSubject<\/a>"],[100,1,"<a href=\"Chat.php.html#127\">App\\Entity\\Chat::getCreatedAt<\/a>"],[100,1,"<a href=\"Chat.php.html#136\">App\\Entity\\Chat::setCreatedAt<\/a>"],[100,1,"<a href=\"Chat.php.html#146\">App\\Entity\\Chat::getUpdatedAt<\/a>"],[0,1,"<a href=\"Chat.php.html#155\">App\\Entity\\Chat::setUpdatedAt<\/a>"],[100,1,"<a href=\"Chat.php.html#165\">App\\Entity\\Chat::getSender<\/a>"],[100,1,"<a href=\"Chat.php.html#174\">App\\Entity\\Chat::setSender<\/a>"],[100,1,"<a href=\"Chat.php.html#184\">App\\Entity\\Chat::getReceiver<\/a>"],[100,1,"<a href=\"Chat.php.html#193\">App\\Entity\\Chat::setReceiver<\/a>"],[0,1,"<a href=\"Chat.php.html#203\">App\\Entity\\Chat::getDeletedBySender<\/a>"],[100,1,"<a href=\"Chat.php.html#212\">App\\Entity\\Chat::setDeletedBySender<\/a>"],[0,1,"<a href=\"Chat.php.html#222\">App\\Entity\\Chat::getDeletedByReceiver<\/a>"],[100,1,"<a href=\"Chat.php.html#231\">App\\Entity\\Chat::setDeletedByReceiver<\/a>"],[100,1,"<a href=\"Chat.php.html#241\">App\\Entity\\Chat::getMessages<\/a>"],[0,2,"<a href=\"Chat.php.html#250\">App\\Entity\\Chat::addMessage<\/a>"],[0,3,"<a href=\"Chat.php.html#264\">App\\Entity\\Chat::removeMessage<\/a>"],[100,2,"<a href=\"Chat.php.html#276\">App\\Entity\\Chat::allMessagesSeenBySender<\/a>"],[100,2,"<a href=\"Chat.php.html#288\">App\\Entity\\Chat::allMessagesSeenByReceiver<\/a>"],[100,1,"<a href=\"Chat.php.html#300\">App\\Entity\\Chat::isSeen<\/a>"],[100,1,"<a href=\"Chat.php.html#309\">App\\Entity\\Chat::setSeen<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#72\">App\\Entity\\ChatMessage::getId<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#80\">App\\Entity\\ChatMessage::getBody<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#89\">App\\Entity\\ChatMessage::setBody<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#99\">App\\Entity\\ChatMessage::getSender<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#108\">App\\Entity\\ChatMessage::setSender<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#118\">App\\Entity\\ChatMessage::getReceiver<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#127\">App\\Entity\\ChatMessage::setReceiver<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#137\">App\\Entity\\ChatMessage::getSeen<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#146\">App\\Entity\\ChatMessage::setSeen<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#156\">App\\Entity\\ChatMessage::getCreatedAt<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#165\">App\\Entity\\ChatMessage::setCreatedAt<\/a>"],[0,1,"<a href=\"ChatMessage.php.html#175\">App\\Entity\\ChatMessage::getChat<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#184\">App\\Entity\\ChatMessage::setChat<\/a>"],[100,1,"<a href=\"ChatMessage.php.html#198\">App\\Entity\\ChatMessage::create<\/a>"],[100,1,"<a href=\"Location.php.html#39\">App\\Entity\\Location::getId<\/a>"],[100,1,"<a href=\"Location.php.html#47\">App\\Entity\\Location::getCity<\/a>"],[0,1,"<a href=\"Location.php.html#56\">App\\Entity\\Location::setCity<\/a>"],[100,1,"<a href=\"Location.php.html#66\">App\\Entity\\Location::getRegion<\/a>"],[0,1,"<a href=\"Location.php.html#75\">App\\Entity\\Location::setRegion<\/a>"],[0,1,"<a href=\"Location.php.html#87\">App\\Entity\\Location::create<\/a>"],[0,1,"<a href=\"RecordedEvent.php.html#46\">App\\Entity\\RecordedEvent::getId<\/a>"],[0,1,"<a href=\"RecordedEvent.php.html#54\">App\\Entity\\RecordedEvent::getType<\/a>"],[75,2,"<a href=\"RecordedEvent.php.html#64\">App\\Entity\\RecordedEvent::setType<\/a>"],[0,1,"<a href=\"RecordedEvent.php.html#78\">App\\Entity\\RecordedEvent::getIpAddress<\/a>"],[100,1,"<a href=\"RecordedEvent.php.html#87\">App\\Entity\\RecordedEvent::setIpAddress<\/a>"],[0,1,"<a href=\"RecordedEvent.php.html#97\">App\\Entity\\RecordedEvent::getCreatedAt<\/a>"],[100,1,"<a href=\"RecordedEvent.php.html#106\">App\\Entity\\RecordedEvent::setCreatedAt<\/a>"],[100,1,"<a href=\"RecordedEvent.php.html#116\">App\\Entity\\RecordedEvent::getValidTypes<\/a>"],[100,1,"<a href=\"RecordedEvent.php.html#126\">App\\Entity\\RecordedEvent::create<\/a>"],[0,1,"<a href=\"Region.php.html#47\">App\\Entity\\Region::__construct<\/a>"],[100,1,"<a href=\"Region.php.html#55\">App\\Entity\\Region::getId<\/a>"],[100,1,"<a href=\"Region.php.html#63\">App\\Entity\\Region::getName<\/a>"],[0,1,"<a href=\"Region.php.html#72\">App\\Entity\\Region::setName<\/a>"],[100,1,"<a href=\"Region.php.html#82\">App\\Entity\\Region::getCountry<\/a>"],[0,1,"<a href=\"Region.php.html#91\">App\\Entity\\Region::setCountry<\/a>"],[100,1,"<a href=\"Region.php.html#101\">App\\Entity\\Region::getLocations<\/a>"],[0,2,"<a href=\"Region.php.html#110\">App\\Entity\\Region::addLocation<\/a>"],[0,3,"<a href=\"Region.php.html#124\">App\\Entity\\Region::removeLocation<\/a>"],[0,1,"<a href=\"Region.php.html#138\">App\\Entity\\Region::create<\/a>"],[0,1,"<a href=\"Role.php.html#42\">App\\Entity\\Role::__construct<\/a>"],[100,1,"<a href=\"Role.php.html#51\">App\\Entity\\Role::getId<\/a>"],[100,1,"<a href=\"Role.php.html#59\">App\\Entity\\Role::getCode<\/a>"],[0,1,"<a href=\"Role.php.html#68\">App\\Entity\\Role::setCode<\/a>"],[100,1,"<a href=\"Role.php.html#78\">App\\Entity\\Role::getName<\/a>"],[0,1,"<a href=\"Role.php.html#87\">App\\Entity\\Role::setName<\/a>"],[100,1,"<a href=\"User.php.html#151\">App\\Entity\\User::__construct<\/a>"],[100,1,"<a href=\"User.php.html#161\">App\\Entity\\User::getId<\/a>"],[100,1,"<a href=\"User.php.html#169\">App\\Entity\\User::getName<\/a>"],[100,1,"<a href=\"User.php.html#178\">App\\Entity\\User::setName<\/a>"],[100,1,"<a href=\"User.php.html#188\">App\\Entity\\User::getEmail<\/a>"],[100,1,"<a href=\"User.php.html#197\">App\\Entity\\User::setEmail<\/a>"],[100,1,"<a href=\"User.php.html#207\">App\\Entity\\User::getUsername<\/a>"],[100,1,"<a href=\"User.php.html#216\">App\\Entity\\User::setUsername<\/a>"],[100,1,"<a href=\"User.php.html#226\">App\\Entity\\User::getPhone<\/a>"],[100,1,"<a href=\"User.php.html#235\">App\\Entity\\User::setPhone<\/a>"],[100,1,"<a href=\"User.php.html#245\">App\\Entity\\User::getAddress<\/a>"],[100,1,"<a href=\"User.php.html#254\">App\\Entity\\User::setAddress<\/a>"],[100,1,"<a href=\"User.php.html#264\">App\\Entity\\User::setPassword<\/a>"],[0,1,"<a href=\"User.php.html#272\">App\\Entity\\User::getCreatedOn<\/a>"],[100,1,"<a href=\"User.php.html#281\">App\\Entity\\User::setCreatedOn<\/a>"],[100,1,"<a href=\"User.php.html#291\">App\\Entity\\User::getPassword<\/a>"],[100,1,"<a href=\"User.php.html#299\">App\\Entity\\User::getSalt<\/a>"],[100,1,"<a href=\"User.php.html#308\">App\\Entity\\User::setSalt<\/a>"],[100,1,"<a href=\"User.php.html#318\">App\\Entity\\User::getPlainPassword<\/a>"],[100,1,"<a href=\"User.php.html#327\">App\\Entity\\User::setPlainPassword<\/a>"],[100,1,"<a href=\"User.php.html#334\">App\\Entity\\User::eraseCredentials<\/a>"],[100,2,"<a href=\"User.php.html#343\">App\\Entity\\User::addRole<\/a>"],[0,1,"<a href=\"User.php.html#356\">App\\Entity\\User::removeRole<\/a>"],[100,2,"<a href=\"User.php.html#366\">App\\Entity\\User::getRoles<\/a>"],[100,1,"<a href=\"User.php.html#380\">App\\Entity\\User::getUserIdentifier<\/a>"],[0,1,"<a href=\"User.php.html#388\">App\\Entity\\User::getLastLogin<\/a>"],[100,1,"<a href=\"User.php.html#397\">App\\Entity\\User::setLastLogin<\/a>"],[0,1,"<a href=\"User.php.html#407\">App\\Entity\\User::getActive<\/a>"],[100,1,"<a href=\"User.php.html#416\">App\\Entity\\User::setActive<\/a>"],[100,1,"<a href=\"User.php.html#426\">App\\Entity\\User::getLocation<\/a>"],[100,1,"<a href=\"User.php.html#435\">App\\Entity\\User::setLocation<\/a>"],[100,1,"<a href=\"User.php.html#445\">App\\Entity\\User::getType<\/a>"],[75,2,"<a href=\"User.php.html#454\">App\\Entity\\User::setType<\/a>"],[0,1,"<a href=\"User.php.html#468\">App\\Entity\\User::getArticles<\/a>"],[0,2,"<a href=\"User.php.html#477\">App\\Entity\\User::addArticle<\/a>"],[0,3,"<a href=\"User.php.html#491\">App\\Entity\\User::removeArticle<\/a>"],[0,1,"<a href=\"User.php.html#503\">App\\Entity\\User::getUserRatings<\/a>"],[0,2,"<a href=\"User.php.html#512\">App\\Entity\\User::addUserRating<\/a>"],[0,3,"<a href=\"User.php.html#526\">App\\Entity\\User::removeUserRating<\/a>"],[100,3,"<a href=\"User.php.html#539\">App\\Entity\\User::getAverageRating<\/a>"],[100,1,"<a href=\"User.php.html#554\">App\\Entity\\User::getValidTypes<\/a>"],[100,1,"<a href=\"User.php.html#562\">App\\Entity\\User::isAdmin<\/a>"],[0,1,"<a href=\"UserEmailConfirmToken.php.html#52\">App\\Entity\\UserEmailConfirmToken::getId<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#60\">App\\Entity\\UserEmailConfirmToken::getToken<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#69\">App\\Entity\\UserEmailConfirmToken::setToken<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#79\">App\\Entity\\UserEmailConfirmToken::getCreatedAt<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#88\">App\\Entity\\UserEmailConfirmToken::setCreatedAt<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#98\">App\\Entity\\UserEmailConfirmToken::getUser<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#107\">App\\Entity\\UserEmailConfirmToken::setUser<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#117\">App\\Entity\\UserEmailConfirmToken::isTokenExpired<\/a>"],[100,1,"<a href=\"UserEmailConfirmToken.php.html#128\">App\\Entity\\UserEmailConfirmToken::create<\/a>"],[0,1,"<a href=\"UserForgotPasswordToken.php.html#50\">App\\Entity\\UserForgotPasswordToken::getId<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#58\">App\\Entity\\UserForgotPasswordToken::getToken<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#67\">App\\Entity\\UserForgotPasswordToken::setToken<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#77\">App\\Entity\\UserForgotPasswordToken::getCreatedAt<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#86\">App\\Entity\\UserForgotPasswordToken::setCreatedAt<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#96\">App\\Entity\\UserForgotPasswordToken::getUser<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#105\">App\\Entity\\UserForgotPasswordToken::setUser<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#115\">App\\Entity\\UserForgotPasswordToken::isTokenExpired<\/a>"],[100,1,"<a href=\"UserForgotPasswordToken.php.html#126\">App\\Entity\\UserForgotPasswordToken::create<\/a>"],[0,1,"<a href=\"UserRating.php.html#52\">App\\Entity\\UserRating::getId<\/a>"],[0,1,"<a href=\"UserRating.php.html#60\">App\\Entity\\UserRating::getUser<\/a>"],[100,1,"<a href=\"UserRating.php.html#69\">App\\Entity\\UserRating::setUser<\/a>"],[0,1,"<a href=\"UserRating.php.html#79\">App\\Entity\\UserRating::getRatedUser<\/a>"],[100,1,"<a href=\"UserRating.php.html#88\">App\\Entity\\UserRating::setRatedUser<\/a>"],[100,1,"<a href=\"UserRating.php.html#98\">App\\Entity\\UserRating::getRating<\/a>"],[100,1,"<a href=\"UserRating.php.html#107\">App\\Entity\\UserRating::setRating<\/a>"],[100,1,"<a href=\"UserRating.php.html#117\">App\\Entity\\UserRating::getComment<\/a>"],[100,1,"<a href=\"UserRating.php.html#126\">App\\Entity\\UserRating::setComment<\/a>"],[100,1,"<a href=\"UserToken.php.html#52\">App\\Entity\\UserToken::__construct<\/a>"],[0,1,"<a href=\"UserToken.php.html#61\">App\\Entity\\UserToken::getId<\/a>"],[100,1,"<a href=\"UserToken.php.html#69\">App\\Entity\\UserToken::getUser<\/a>"],[100,1,"<a href=\"UserToken.php.html#78\">App\\Entity\\UserToken::setUser<\/a>"],[100,1,"<a href=\"UserToken.php.html#88\">App\\Entity\\UserToken::getToken<\/a>"],[100,1,"<a href=\"UserToken.php.html#97\">App\\Entity\\UserToken::setToken<\/a>"],[100,1,"<a href=\"UserToken.php.html#107\">App\\Entity\\UserToken::getRefreshToken<\/a>"],[100,1,"<a href=\"UserToken.php.html#116\">App\\Entity\\UserToken::setRefreshToken<\/a>"],[100,1,"<a href=\"UserToken.php.html#126\">App\\Entity\\UserToken::getGeneratedDate<\/a>"],[100,1,"<a href=\"UserToken.php.html#135\">App\\Entity\\UserToken::setGeneratedDate<\/a>"],[100,1,"<a href=\"UserToken.php.html#146\">App\\Entity\\UserToken::generateRefreshToken<\/a>"],[100,1,"<a href=\"UserToken.php.html#155\">App\\Entity\\UserToken::isRefreshExpired<\/a>"],[100,1,"<a href=\"UserToken.php.html#165\">App\\Entity\\UserToken::create<\/a>"]], 'Method Complexity'))
+      .transition()
+      .duration(500)
+      .call(chart);
+
+    nv.utils.windowResize(chart.update);
+
+    return chart;
+  });
+
+  function getComplexityData(data, label) {
+    var values = [];
+    $.each(data, function(key) {
+      var value = Math.round(data[key][0]*100) / 100;
+      values.push({
+        x: value,
+        y: data[key][1],
+        class: data[key][2],
+        size: 0.05,
+        shape: 'diamond'
+      });
+    });
+
+    return [
+      {
+        key: label,
+        values: values,
+        color: "#4572A7"
+      }
+    ];
+  }
+});
+  </script>
+ </body>
+</html>

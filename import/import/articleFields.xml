@@ -1,0 +1,494 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<database name="bum_db">
+        <table name="attributes">
+            <column name="id">1</column>
+            <column name="name">Godište</column>
+            <column name="type">dropdownGenerateIncNow</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">1900</column>
+            <column name="oldname">prod_year</column>
+            <column name="attributeOrder">1</column>
+        </table>
+        <table name="attributes">
+            <column name="id">2</column>
+            <column name="name">Kilometraža</column>
+            <column name="type">inputInt</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">mileage</column>
+            <column name="attributeOrder">2</column>
+        </table>
+        <table name="attributes">
+            <column name="id">3</column>
+            <column name="name">Gorivo</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes"></column>
+            <column name="oldname">fuel</column>
+            <column name="attributeOrder">3</column>
+        </table>
+        <table name="attributes">
+            <column name="id">4</column>
+            <column name="name">Kilovati</column>
+            <column name="type">inputInt</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_kw</column>
+            <column name="attributeOrder">4</column>
+        </table>
+        <table name="attributes">
+            <column name="id">5</column>
+            <column name="name">Konjska Snaga</column>
+            <column name="type">inputInt</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_horse</column>
+            <column name="attributeOrder">5</column>
+        </table>
+        <table name="attributes">
+            <column name="id">6</column>
+            <column name="name">Kubikaža ccm</column>
+            <column name="type">dropDownGenrateInc</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">0.6-7.5</column>
+            <column name="oldname">volumen</column>
+            <column name="attributeOrder">6</column>
+        </table>
+        <table name="attributes">
+            <column name="id">7</column>
+            <column name="name">Karoserija</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">chassis</column>
+            <column name="attributeOrder">16</column>
+        </table>
+        <table name="attributes">
+            <column name="id">8</column>
+            <column name="name">Pogon</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">drive</column>
+            <column name="attributeOrder">17</column>
+        </table>
+        <table name="attributes">
+            <column name="id">9</column>
+            <column name="name">Emisioni Standard</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">emission</column>
+            <column name="attributeOrder">9</column>
+        </table>
+        <table name="attributes">
+            <column name="id">10</column>
+            <column name="name">Mjenjač</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">gear_type</column>
+            <column name="attributeOrder">10</column>
+        </table>
+        <table name="attributes">
+            <column name="id">11</column>
+            <column name="name">Broj brzina mjenjača</column>
+            <column name="type">dropDownGenrateInc</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">1-10</column>
+            <column name="oldname">gear</column>
+            <column name="attributeOrder">11</column>
+        </table>
+        <table name="attributes">
+            <column name="id">12</column>
+            <column name="name">Broj vrata</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">door_count</column>
+            <column name="attributeOrder">12</column>
+        </table>
+        <table name="attributes">
+            <column name="id">13</column>
+            <column name="name">Strana Volana</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">driver_side</column>
+            <column name="attributeOrder">13</column>
+        </table>
+        <table name="attributes">
+            <column name="id">14</column>
+            <column name="name">Boja spoljašnjosti</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">color</column>
+            <column name="attributeOrder">14</column>
+        </table>
+        <table name="attributes">
+            <column name="id">15</column>
+            <column name="name">Oštećenje</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">damage</column>
+            <column name="attributeOrder">15</column>
+        </table>
+        <table name="attributes">
+            <column name="id">16</column>
+            <column name="name">Godište</column>
+            <column name="type">dropdownGenerateIncNow</column>
+            <column name="category">motorcycles</column>
+            <column name="required">1</column>
+            <column name="notes">1900</column>
+            <column name="oldname">prod_year</column>
+            <column name="attributeOrder">1</column>
+        </table>
+        <table name="attributes">
+            <column name="id">17</column>
+            <column name="name">Kilometraža</column>
+            <column name="type">inputint</column>
+            <column name="category">motorcycles</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">mileage</column>
+            <column name="attributeOrder">2</column>
+        </table>
+        <table name="attributes">
+            <column name="id">18</column>
+            <column name="name">Gorivo</column>
+            <column name="type">dropdown</column>
+            <column name="category">motorcycles</column>
+            <column name="required">1</column>
+            <column name="notes"></column>
+            <column name="oldname">fuel</column>
+            <column name="attributeOrder">3</column>
+        </table>
+        <table name="attributes">
+            <column name="id">19</column>
+            <column name="name">Kilovati</column>
+            <column name="type">inputInt</column>
+            <column name="category">motorcycles</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_kw</column>
+            <column name="attributeOrder">4</column>
+        </table>
+        <table name="attributes">
+            <column name="id">20</column>
+            <column name="name">Konjska Snaga</column>
+            <column name="type">inputInt</column>
+            <column name="category">motorcycles</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_horse</column>
+            <column name="attributeOrder">5</column>
+        </table>
+        <table name="attributes">
+            <column name="id">21</column>
+            <column name="name">Kubikaža ccm</column>
+            <column name="type">inputInt</column>
+            <column name="category">motorcycles</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">volumen</column>
+            <column name="attributeOrder">6</column>
+        </table>
+        <table name="attributes">
+            <column name="id">22</column>
+            <column name="name">Kategorija</column>
+            <column name="type">dropdown</column>
+            <column name="category">motorcycles</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">moto_category</column>
+            <column name="attributeOrder">7</column>
+        </table>
+        <table name="attributes">
+            <column name="id">23</column>
+            <column name="name">Oštećenje</column>
+            <column name="type">dropdown</column>
+            <column name="category">motorcycles</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">damage</column>
+            <column name="attributeOrder">8</column>
+        </table>
+        <table name="attributes">
+            <column name="id">24</column>
+            <column name="name">Godište</column>
+            <column name="type">dropdownGenerateIncNow</column>
+            <column name="category">trucks</column>
+            <column name="required">1</column>
+            <column name="notes">1900</column>
+            <column name="oldname">prod_year</column>
+            <column name="attributeOrder">1</column>
+        </table>
+        <table name="attributes">
+            <column name="id">25</column>
+            <column name="name">Kilometraža</column>
+            <column name="type">inputint</column>
+            <column name="category">trucks</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">mileage</column>
+            <column name="attributeOrder">2</column>
+        </table>
+        <table name="attributes">
+            <column name="id">26</column>
+            <column name="name">Gorivo</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">1</column>
+            <column name="notes"></column>
+            <column name="oldname">fuel</column>
+            <column name="attributeOrder">3</column>
+        </table>
+        <table name="attributes">
+            <column name="id">27</column>
+            <column name="name">Kilovati</column>
+            <column name="type">inputInt</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_kw</column>
+            <column name="attributeOrder">4</column>
+        </table>
+        <table name="attributes">
+            <column name="id">28</column>
+            <column name="name">Konjska Snaga</column>
+            <column name="type">inputInt</column>
+            <column name="category">trucks</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">power_horse</column>
+            <column name="attributeOrder">5</column>
+        </table>
+        <table name="attributes">
+            <column name="id">29</column>
+            <column name="name">Kubikaža ccm</column>
+            <column name="type">inputInt</column>
+            <column name="category">trucks</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">volumen</column>
+            <column name="attributeOrder">6</column>
+        </table>
+        <table name="attributes">
+            <column name="id">30</column>
+            <column name="name">Nosivost</column>
+            <column name="type">inputInt</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">tonnage</column>
+            <column name="attributeOrder">7</column>
+        </table>
+        <table name="attributes">
+            <column name="id">31</column>
+            <column name="name">Broj osovina</column>
+            <column name="type">inputint</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">axis</column>
+            <column name="attributeOrder">8</column>
+        </table>
+        <table name="attributes">
+            <column name="id">32</column>
+            <column name="name">Oštećenje</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">damage</column>
+            <column name="attributeOrder">9</column>
+        </table>
+        <table name="attributes">
+            <column name="id">33</column>
+            <column name="name">TIp teretnjaka</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">truck_sub_type</column>
+            <column name="attributeOrder">10</column>
+        </table>
+        <table name="attributes">
+            <column name="id">34</column>
+            <column name="name">Tip kombija</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">van_type</column>
+            <column name="attributeOrder">11</column>
+        </table>
+        <table name="attributes">
+            <column name="id">35</column>
+            <column name="name">Tip autobusa</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">bus_type</column>
+            <column name="attributeOrder">12</column>
+        </table>
+        <table name="attributes">
+            <column name="id">36</column>
+            <column name="name">Tip kamiona</column>
+            <column name="type">dropdown</column>
+            <column name="category">trucks</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">truck_type</column>
+            <column name="attributeOrder">13</column>
+        </table>
+        <table name="attributes">
+            <column name="id">37</column>
+            <column name="name">Kategorija/Felni</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">wheel_category_type</column>
+            <column name="attributeOrder">1</column>
+        </table>
+        <table name="attributes">
+            <column name="id">38</column>
+            <column name="name">Materijal</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">wheel_material</column>
+            <column name="attributeOrder">2</column>
+        </table>
+        <table name="attributes">
+            <column name="id">39</column>
+            <column name="name">Felne za</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">wheel_for</column>
+            <column name="attributeOrder">3</column>
+        </table>
+        <table name="attributes">
+            <column name="id">40</column>
+            <column name="name">Gume</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">tire</column>
+            <column name="attributeOrder">4</column>
+        </table>
+        <table name="attributes">
+            <column name="id">41</column>
+            <column name="name">Tip guma</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">tire_type</column>
+            <column name="attributeOrder">5</column>
+        </table>
+        <table name="attributes">
+            <column name="id">42</column>
+            <column name="name">Veličina</column>
+            <column name="type">dropDownGenrateInc</column>
+            <column name="category">wheels</column>
+            <column name="required">1</column>
+            <column name="notes">8-28</column>
+            <column name="oldname">size</column>
+            <column name="attributeOrder">6</column>
+        </table>
+        <table name="attributes">
+            <column name="id">43</column>
+            <column name="name">Promjer rupa</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">diametar</column>
+            <column name="attributeOrder">7</column>
+        </table>
+        <table name="attributes">
+            <column name="id">44</column>
+            <column name="name">Oštećenje</column>
+            <column name="type">dropdown</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">damage</column>
+            <column name="attributeOrder">8</column>
+        </table>
+        <table name="attributes">
+            <column name="id">45</column>
+            <column name="name">Oblik felne</column>
+            <column name="type">dropdownImage</column>
+            <column name="category">wheels</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname">wheel_shape</column>
+            <column name="attributeOrder">9</column>
+        </table>
+        <table name="attributes">
+            <column name="id">46</column>
+            <column name="name">Vlasništvo</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname"></column>
+            <column name="attributeOrder">7</column>
+        </table>
+        <table name="attributes">
+            <column name="id">47</column>
+            <column name="name">Klima</column>
+            <column name="type">dropdown</column>
+            <column name="category">cars</column>
+            <column name="required">1</column>
+            <column name="notes">NULL</column>
+            <column name="oldname"></column>
+            <column name="attributeOrder">8</column>
+        </table>
+        <table name="attributes">
+            <column name="id">50</column>
+            <column name="name">Sigurnost</column>
+            <column name="type">checkboxes</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname"></column>
+            <column name="attributeOrder">18</column>
+        </table>
+        <table name="attributes">
+            <column name="id">51</column>
+            <column name="name">Oprema</column>
+            <column name="type">checkboxes</column>
+            <column name="category">cars</column>
+            <column name="required">0</column>
+            <column name="notes">NULL</column>
+            <column name="oldname"></column>
+            <column name="attributeOrder">19</column>
+        </table>
+    </database>

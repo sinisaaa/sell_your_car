@@ -1,0 +1,11 @@
+#!/bin/bash
+
+bin/console --env=test  doc:sch:upd -f
+yes | bin/console --env=test doctrine:fixtures:load
+
+if [[ $1 = "--coverage" ]]; then
+  php -dxdebug.mode=coverage bin/phpunit --coverage-html='tests/reports'
+else
+    ./vendor/bin/phpunit
+fi
+

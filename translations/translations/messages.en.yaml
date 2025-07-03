@@ -1,0 +1,44 @@
+#EMAILS#
+Email.General.Hello: Zdravo
+Email.Messages.Registration.Confirm.Email.Address.Title: Potvrdite vašu email adresu
+Email.Messages.Registration.Confirm.Email.Address.Body: Kako biste potvrdili registraciju kliknite na sljedeći link
+Email.Messages.Registration.Confirm.Email.Address.Confirm: Potvrdi registraciju
+Email.Messages.User.Forgot.Password.Title: Zahtjev za promjenu lozinke
+Email.Messages.User.Forgot.Password.Body: Kako biste promijenili lozinku kliknite na sljedeći link
+Email.Messages.User.Forgot.Password.Confirm: Promijeni lozinku
+
+#EXCEPTIONS#
+Exception.Auth.Invalid.Credentials: Invalid credentials
+Exception.Auth.Register.User.Wait.Time: You already registered user, please wait some time and try again!
+Exception.Auth.Register.User.Email.Already.Exist: User with same email already exists.
+Exception.Refresh.Token.Not.Sent: Refresh token not sent
+Exception.Refresh.Token.Not.Found: Refresh token not found
+Exception.Refresh.Token.Not.Exipred: Refresh token expired
+Exception.Auth.Register.Security.Answer.Invalid: Invalid security answer
+Exception.Auth.Confirm.Email.Token.Not.Sent: Validation token not provided
+Exception.Auth.Confirm.Email.Token.Invalid: Invalid validation token
+Exception.Auth.Confirm.Email.Token.Expired: Validation token has been expired. Please request new one.
+Exception.Auth.Forgot.Password.Email.Not.Sent: Email address is not provided
+Exception.Auth.Reset.Password.Token.Not.Found: Reset password token not found
+Exception.Auth.Reset.Password.Token.Expired: Reset password token has been expired. Please request new one.
+Exception.Chat.Body.Empty: Message body can not be empty
+Exception.Chat.Chat.Not.Found: Chat not found
+Exception.Chat.User.Not.Have.Permissions: Users does not have permissions to access chat
+Exception.User.Rated.User.Not.Car.Dealer: Regular user can not be rated
+Exception.User.You.Already.Rated.Car.Dealer: You have already rated selected car dealer
+Exception.User.Can.Not.Rate.Self: You can not rate yourself
+Exception.User.Car.Dealer.Not.Rated: Rating for selected car dealer not found
+Exception.My.Profile.Invalid.Old.Password: Invalid old password
+Exception.Article.Article.Is.Deactivated: Article is deactivated
+Exception.Article.Not.Found: Article not found
+Exception.Article.Already.Created: Article already created
+Exception.Article.Manufacturer.Not.Selected: Model can not be selected without manufacturer
+Exception.Article.Manufacturer.Model.Invalid: Model does not belong to manufacturer
+Exception.Article.Field.Not.Found: Article category field not found
+Exception.Article.Field.Option.Not.Found: Article category field option not found
+Exception.Article.Field.Option.Not.Belong: Article category field option not belong to field
+Exception.Article.Field.Options.Must.Be.Array: Article category field options must be in array
+Exception.Article.Field.Not.Belong.To.Category: Field does not belong to selected article category
+Exception.Contact.Message.Not.Found: Contact message not found
+Exception.Contact.Wait.Time: You already sent contact message, please wait some time and try again!
+Exception.Article.Promote.Not.Enough.Credits: You dont have enough creadits for selected action.
