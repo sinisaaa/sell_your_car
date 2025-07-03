@@ -17,6 +17,7 @@ class RecordedEvent
 {
 
     public const REGISTRATION_EVENT = 'registration';
+    public const CONTACT_EVENT = 'contact';
 
     /**
      * @ORM\Id
@@ -115,7 +116,7 @@ class RecordedEvent
      */
     public static function getValidTypes(): array
     {
-        return [self::REGISTRATION_EVENT];
+        return [self::REGISTRATION_EVENT, self::CONTACT_EVENT];
     }
 
     /**

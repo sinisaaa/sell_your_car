@@ -5,6 +5,8 @@ declare(strict_types=1);
 namespace App\DataFixtures;
 
 use App\Entity\Role;
+use App\Entity\User;
+use App\Helper\ValueObjects\RoleCode;
 use App\Service\EncodeService;
 use App\Service\UserService;
 use Doctrine\Bundle\FixturesBundle\Fixture;
@@ -68,6 +70,18 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
                 'role_reference_name' => 'role_user',
                 'active' => true
             ],
+            [
+                'email' => 'carDealer@mail.com',
+                'name' => 'Car dealer',
+                'role_reference_name' => 'role_car_dealer',
+                'active' => true
+            ],
+            [
+                'email' => 'carDealerForRatings@mail.com',
+                'name' => 'Car dealer for ratings',
+                'role_reference_name' => 'role_car_dealer',
+                'active' => true
+            ],
         ];
 
         foreach ($users as $user) {
@@ -98,8 +112,15 @@ class UserFixtures extends Fixture implements OrderedFixtureInterface
     {
         /** @var Role $role */
         $role = $this->getReference($roleReferenceName);
+
         $user = $this->userService->createUser($email, $name, '123qweQWE', $role);
+
+        if (RoleCode::CAR_DEALER === $role->getCode()) {
+            $user->setType(User::TYPE_CAR_DEALER);
+        }
+
         $user->setActive($active);
+        $user->setEmailVerified(true);
 
         $this->encodeService->encodeUserPassword($user);
 

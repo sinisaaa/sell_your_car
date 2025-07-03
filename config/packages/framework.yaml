@@ -1,5 +1,9 @@
 # see https://symfony.com/doc/current/reference/configuration/framework.html
 framework:
+    cache:
+        pools:
+            doctrine.second_level_cache_pool:
+                adapter: cache.app
     secret: '%env(APP_SECRET)%'
     #csrf_protection: true
     http_method_override: false

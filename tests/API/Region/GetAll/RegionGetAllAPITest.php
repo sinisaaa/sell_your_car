@@ -16,11 +16,9 @@ class RegionGetAllAPITest extends AbstractAPITestCase
      */
     public function testGetAllSuccess(): void
     {
-        $this->loginAsStandardUser();
-
         $this->client->request(
             'GET',
-            '/api/regions'
+            '/api/public/regions'
         );
 
         $response = json_decode($this->client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
@@ -28,19 +26,6 @@ class RegionGetAllAPITest extends AbstractAPITestCase
         self::assertSame(Response::HTTP_OK, $this->client->getResponse()->getStatusCode());
         self::assertNotNull($this->client->getResponse());
         self::assertNotEmpty($response['items']);
-    }
-
-    /**
-     * @throws JsonException
-     */
-    public function testGetAllFailedNotLoggedIn(): void
-    {
-        $this->client->request(
-            'GET',
-            '/api/regions'
-        );
-
-        self::assertSame(Response::HTTP_UNAUTHORIZED, $this->client->getResponse()->getStatusCode());
     }
 
 }

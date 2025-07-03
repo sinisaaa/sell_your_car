@@ -67,8 +67,22 @@ class AuthForgotPasswordAPITest extends AbstractAPITestCase
             ], JSON_THROW_ON_ERROR)
         );
 
-
         self::assertSame(Response::HTTP_NO_CONTENT, $this->client->getResponse()->getStatusCode());
     }
 
+    /**
+     *
+     */
+    public function testForgotPasswordFailedEmailNotSend(): void
+    {
+        $this->client->request(
+            'POST',
+            '/api/forgot-password',
+            [],
+            [],
+            ['CONTENT_TYPE' => 'application/json'],
+        );
+
+        self::assertSame(Response::HTTP_BAD_REQUEST, $this->client->getResponse()->getStatusCode());
+    }
 }

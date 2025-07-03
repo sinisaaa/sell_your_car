@@ -8,6 +8,8 @@ use App\Entity\Location;
 use App\Entity\User;
 use Symfony\Bridge\Doctrine\Form\Type\EntityType;
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\Extension\Core\Type\CheckboxType;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\TextType;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
@@ -29,7 +31,13 @@ class MyProfileUpdateType extends AbstractType
             ->add('location', EntityType::class, [
                 'class' => Location::class,
                 'multiple' => false
-            ]);
+            ])
+            ->add('smsNotifications', CheckboxType::class, ['false_values' => [null, false, 'false', '0']])
+            ->add('pushNotifications', CheckboxType::class, ['false_values' => [null, false, 'false', '0']])
+            ->add('discountNotification', CheckboxType::class, ['false_values' => [null, false, 'false', '0']])
+            ->add('sellNotification', CheckboxType::class, ['false_values' => [null, false, 'false', '0']])
+            ->add('buyNotifications', CheckboxType::class, ['false_values' => [null, false, 'false', '0']])
+        ;
     }
 
     /**

@@ -28,7 +28,12 @@ class ChatCreateType extends AbstractType
                 'class' => User::class,
                 'multiple' => false,
                 'constraints' => [new NotBlank()]
-            ]);
+            ])
+            ->add('body', TextType::class, [
+                'constraints' => [new NotBlank()],
+                'purify_html' => true,
+                'mapped' => false]
+            );
     }
 
     /**

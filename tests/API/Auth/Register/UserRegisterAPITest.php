@@ -44,8 +44,33 @@ class UserRegisterAPITest extends AbstractAPITestCase
 
         self::assertSame($responseCode, $this->client->getResponse()->getStatusCode());
     }
+    /**
+     * @throws JsonException
+     */
+    public function testCreateFailedEmailAlreadyExist(): void
+    {
+        $this->client->request(
+            'POST',
+            '/api/register',
+            [],
+            [],
+            ['CONTENT_TYPE' => 'application/json'],
+            json_encode([
+                'email' => 'user@mail.com',
+                'name' => 'Existing email',
+                'plainPassword' => '123qweQWE',
+                'address' => 'Address 16',
+                'phone' => '011233548',
+                'securityQuestion' => '9'
+            ], JSON_THROW_ON_ERROR)
+        );
 
-     /**
+        $response = json_decode($this->client->getResponse()->getContent(), true, 512, JSON_THROW_ON_ERROR);
+
+        self::assertSame(Response::HTTP_CONFLICT, $this->client->getResponse()->getStatusCode());
+    }
+
+    /**
      * @throws JsonException
      */
     public function testCreateSuccess(): void

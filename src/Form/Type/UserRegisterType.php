@@ -37,6 +37,12 @@ class UserRegisterType extends AbstractType
                 'constraints' => [
                     new NotBlank()
                 ]
+            ])
+            ->add('securityQuestion', TextType::class, [
+                'constraints' => [
+                    new NotBlank()
+                ],
+                'mapped' => false
             ]);
     }
 

@@ -1,5 +1,7 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Repository;
 
 use App\Entity\UserEmailConfirmToken;
@@ -14,37 +16,14 @@ use Doctrine\Persistence\ManagerRegistry;
  */
 class UserEmailConfirmTokenRepository extends ServiceEntityRepository
 {
+
+    /**
+     * UserEmailConfirmTokenRepository constructor.
+     * @param ManagerRegistry $registry
+     */
     public function __construct(ManagerRegistry $registry)
     {
         parent::__construct($registry, UserEmailConfirmToken::class);
     }
 
-    // /**
-    //  * @return UserEmailConfirmToken[] Returns an array of UserEmailConfirmToken objects
-    //  */
-    /*
-    public function findByExampleField($value)
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->orderBy('u.id', 'ASC')
-            ->setMaxResults(10)
-            ->getQuery()
-            ->getResult()
-        ;
-    }
-    */
-
-    /*
-    public function findOneBySomeField($value): ?UserEmailConfirmToken
-    {
-        return $this->createQueryBuilder('u')
-            ->andWhere('u.exampleField = :val')
-            ->setParameter('val', $value)
-            ->getQuery()
-            ->getOneOrNullResult()
-        ;
-    }
-    */
 }

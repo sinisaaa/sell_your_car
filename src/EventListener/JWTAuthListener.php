@@ -38,6 +38,8 @@ final class JWTAuthListener
         $payload = $event->getData();
 
         $payload['name'] = $user->getName();
+        $payload['activeCredits'] = $user->getActiveCredits();
+        $payload['passiveCredits'] = $user->getPassiveCredits();
 
         $event->setData($payload);
     }

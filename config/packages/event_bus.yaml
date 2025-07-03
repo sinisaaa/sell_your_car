@@ -5,6 +5,7 @@ services:
         public: true
         tags:
             - { name: event_subscriber, subscribes_to: App\Event\UserRegisteredEvent, method: recordUserRegisteredEvent }
+            - { name: event_subscriber, subscribes_to: App\Event\ContactMessageCreatedEvent, method: recordContactMessageCreatedEvent }
 
     bus.listener.notifications:
         class: App\EventListener\NotificationsListener
@@ -13,3 +14,10 @@ services:
         tags:
             - { name: event_subscriber, subscribes_to: App\Event\UserRegisteredEvent, method: sendUserCreatedNotifications }
             - { name: event_subscriber, subscribes_to: App\Event\UserForgotPasswordEvent, method: sendForgotPasswordNotifications }
+
+    bus.listener.articles_searched:
+        class: App\EventListener\ArticleSearchListener
+        autowire: true
+        public: true
+        tags:
+            - { name: event_subscriber, subscribes_to: App\Event\ArticlesSearchedEvent, method: articlesSearched }

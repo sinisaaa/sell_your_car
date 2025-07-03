@@ -21,4 +21,6 @@ return [
     SimpleBus\SymfonyBridge\SimpleBusEventBusBundle::class => ['all' => true],
     SimpleBus\SymfonyBridge\DoctrineOrmBridgeBundle::class => ['all' => true],
     Knp\Bundle\PaginatorBundle\KnpPaginatorBundle::class => ['all' => true],
+    Vich\UploaderBundle\VichUploaderBundle::class => ['all' => true],
+    Nelmio\CorsBundle\NelmioCorsBundle::class => ['all' => true],
 ];
