@@ -14,9 +14,9 @@ use Symfony\Component\HttpFoundation\Response;
 class PikCommunicationService
 {
 
-    public const PIK_BASE_URI = 'https://api.pik.ba';
-    public const PIK_USER_ARTICLES_URL = '/artikli/?username={{username}}&stranica={{page}}';
-    public const PIK_ARTICLE_DETAILS_URL = '/artikli/{{id}}';
+    public const PIK_BASE_URI = 'https://api.bik.com';
+    public const PIK_USER_ARTICLES_URL = '/aricles/?username={{username}}&page={{page}}';
+    public const PIK_ARTICLE_DETAILS_URL = '/articles/{{id}}';
 
     /**
      * PikCommunicationService constructor.
