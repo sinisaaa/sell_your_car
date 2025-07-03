@@ -9,7 +9,7 @@ This project contains all API of sell your car application
 Do `git clone` of the project:
 
 ```bash
-git clone
+git clone https://github.com/sinisaaa/sell_your_car.git
 ```
 
 Run composer install:
