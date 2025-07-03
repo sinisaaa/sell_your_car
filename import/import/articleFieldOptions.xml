@@ -1,0 +1,986 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+    <database name="bum_db">
+        <!-- Table attributes_values -->
+        <table name="attributes_values">
+            <column name="id">1</column>
+            <column name="attribute_id">3</column>
+            <column name="name">Dizel</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">2</column>
+            <column name="attribute_id">3</column>
+            <column name="name">Benzin</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">4</column>
+            <column name="attribute_id">3</column>
+            <column name="name">Plin</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">5</column>
+            <column name="attribute_id">3</column>
+            <column name="name">Hibrid</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">6</column>
+            <column name="attribute_id">3</column>
+            <column name="name">Elektro</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">7</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Limuzina</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">8</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Malo auto</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">9</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Karavan</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">10</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Kombi</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">11</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Terenac</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">12</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Kabriolet</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">13</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Sportski/Kupe</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">14</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Off-road</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">15</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Caddy</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">16</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Pick-Up</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">17</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Oldtimer</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">18</column>
+            <column name="attribute_id">7</column>
+            <column name="name">Ostalo</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">19</column>
+            <column name="attribute_id">8</column>
+            <column name="name">Prednji</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">20</column>
+            <column name="attribute_id">8</column>
+            <column name="name">Zadnji</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">21</column>
+            <column name="attribute_id">8</column>
+            <column name="name">4x4</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">22</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro1</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">23</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro2</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">24</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro3</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">25</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro4</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">26</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro5</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">27</column>
+            <column name="attribute_id">9</column>
+            <column name="name">Euro6</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">28</column>
+            <column name="attribute_id">10</column>
+            <column name="name">Manuelni</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">29</column>
+            <column name="attribute_id">10</column>
+            <column name="name">Polu-Automatski</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">30</column>
+            <column name="attribute_id">10</column>
+            <column name="name">Automatski</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">31</column>
+            <column name="attribute_id">13</column>
+            <column name="name">Lijeva</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">32</column>
+            <column name="attribute_id">13</column>
+            <column name="name">Desna</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">33</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Bež</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">34</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Bijela</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">35</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Crna</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">36</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Crvena</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">37</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Ljubičasta</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">38</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Narandžasta</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">39</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Siva</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">40</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Plava</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">41</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Smeđa</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">42</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Srebrena</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">43</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Zelena</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">44</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Zlatna</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">45</column>
+            <column name="attribute_id">14</column>
+            <column name="name">Žuta</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">46</column>
+            <column name="attribute_id">15</column>
+            <column name="name">Da</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">47</column>
+            <column name="attribute_id">15</column>
+            <column name="name">Ne</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">48</column>
+            <column name="attribute_id">18</column>
+            <column name="name">Dizel</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">49</column>
+            <column name="attribute_id">18</column>
+            <column name="name">Benzin</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">50</column>
+            <column name="attribute_id">18</column>
+            <column name="name">Elektro</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">51</column>
+            <column name="attribute_id">22</column>
+            <column name="name">Motor</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">52</column>
+            <column name="attribute_id">22</column>
+            <column name="name">Skuter</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">53</column>
+            <column name="attribute_id">23</column>
+            <column name="name">Da</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">54</column>
+            <column name="attribute_id">23</column>
+            <column name="name">Ne</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">55</column>
+            <column name="attribute_id">26</column>
+            <column name="name">Dizel</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">56</column>
+            <column name="attribute_id">26</column>
+            <column name="name">Benzin</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">58</column>
+            <column name="attribute_id">26</column>
+            <column name="name">Plin</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">59</column>
+            <column name="attribute_id">26</column>
+            <column name="name">Hibrid</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">60</column>
+            <column name="attribute_id">26</column>
+            <column name="name">Elektro</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">61</column>
+            <column name="attribute_id">32</column>
+            <column name="name">Da</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">62</column>
+            <column name="attribute_id">32</column>
+            <column name="name">Ne</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">63</column>
+            <column name="attribute_id">33</column>
+            <column name="name">Kamion</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">64</column>
+            <column name="attribute_id">33</column>
+            <column name="name">Kombi</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">65</column>
+            <column name="attribute_id">33</column>
+            <column name="name">Autobus</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">66</column>
+            <column name="attribute_id">34</column>
+            <column name="name">Hladnjača</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">67</column>
+            <column name="attribute_id">34</column>
+            <column name="name">Preko 3.5 tone</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">68</column>
+            <column name="attribute_id">34</column>
+            <column name="name">Putnički</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">69</column>
+            <column name="attribute_id">34</column>
+            <column name="name">Ostalo</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">70</column>
+            <column name="attribute_id">35</column>
+            <column name="name">Na sprat</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">71</column>
+            <column name="attribute_id">35</column>
+            <column name="name">Kombi</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">72</column>
+            <column name="attribute_id">35</column>
+            <column name="name">Minibus</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">73</column>
+            <column name="attribute_id">35</column>
+            <column name="name">Zglobni</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">74</column>
+            <column name="attribute_id">35</column>
+            <column name="name">Dabldeker</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">75</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Preko 7 tona</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">76</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Cisterna</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">77</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Hladnjača</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">78</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Kiper</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">79</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Sanduk metalni</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">80</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Sanduk sa ceradom</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">81</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Šlep</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">82</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Tegljač</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">83</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Šasija sa kabinom</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">84</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Šasija dvostruka kabina</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">85</column>
+            <column name="attribute_id">36</column>
+            <column name="name">Ostalo</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">86</column>
+            <column name="attribute_id">37</column>
+            <column name="name">Fabričke</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">87</column>
+            <column name="attribute_id">37</column>
+            <column name="name">Popularni proizvođači</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">88</column>
+            <column name="attribute_id">38</column>
+            <column name="name">Čelik</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">89</column>
+            <column name="attribute_id">38</column>
+            <column name="name">Aluminijum</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">90</column>
+            <column name="attribute_id">38</column>
+            <column name="name">Magnezijum</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">91</column>
+            <column name="attribute_id">38</column>
+            <column name="name">Karbon</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">92</column>
+            <column name="attribute_id">39</column>
+            <column name="name">Automobile</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">93</column>
+            <column name="attribute_id">39</column>
+            <column name="name">Motore/Skutere</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">94</column>
+            <column name="attribute_id">39</column>
+            <column name="name">Teretna vozila</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">95</column>
+            <column name="attribute_id">40</column>
+            <column name="name">Da</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">96</column>
+            <column name="attribute_id">40</column>
+            <column name="name">Ne</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">97</column>
+            <column name="attribute_id">41</column>
+            <column name="name">Zimske</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">98</column>
+            <column name="attribute_id">41</column>
+            <column name="name">Ljetnje</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">99</column>
+            <column name="attribute_id">43</column>
+            <column name="name">4 x 98</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">100</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 98</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">101</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 108</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">102</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 110</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">103</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 120,65</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">104</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 114,3</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">105</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 100</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">106</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 112</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">107</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 120</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">108</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 130</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">109</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 154,94</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">110</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 115</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">111</column>
+            <column name="attribute_id">43</column>
+            <column name="name">4 x 100</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">112</column>
+            <column name="attribute_id">43</column>
+            <column name="name">4 x 108</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">113</column>
+            <column name="attribute_id">43</column>
+            <column name="name">5 x 118</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">114</column>
+            <column name="attribute_id">43</column>
+            <column name="name">OSTALO</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">115</column>
+            <column name="attribute_id">44</column>
+            <column name="name">Da</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">116</column>
+            <column name="attribute_id">44</column>
+            <column name="name">Ne</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">119</column>
+            <column name="attribute_id">47</column>
+            <column name="name">Automatska</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">120</column>
+            <column name="attribute_id">47</column>
+            <column name="name">Manuelna</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">121</column>
+            <column name="attribute_id">47</column>
+            <column name="name">Nema klimu</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">122</column>
+            <column name="attribute_id">46</column>
+            <column name="name">Domaće tablice</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">123</column>
+            <column name="attribute_id">46</column>
+            <column name="name">Na ime kupca</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">124</column>
+            <column name="attribute_id">46</column>
+            <column name="name">Strane tablice</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">125</column>
+            <column name="attribute_id">50</column>
+            <column name="name">ABS</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">126</column>
+            <column name="attribute_id">50</column>
+            <column name="name">KODIRAN KLJUČ</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">127</column>
+            <column name="attribute_id">50</column>
+            <column name="name">CENTRALNO ZAKLJUČAVANJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">128</column>
+            <column name="attribute_id">50</column>
+            <column name="name">AIRBAG</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">129</column>
+            <column name="attribute_id">50</column>
+            <column name="name">ASR</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">130</column>
+            <column name="attribute_id">50</column>
+            <column name="name">SENZOR MRTVOG UGLA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">131</column>
+            <column name="attribute_id">50</column>
+            <column name="name">ESP</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">132</column>
+            <column name="attribute_id">50</column>
+            <column name="name">BLOKADA MOTORA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">133</column>
+            <column name="attribute_id">50</column>
+            <column name="name">ASISTENT PRAĆENJA TRAKA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">134</column>
+            <column name="attribute_id">50</column>
+            <column name="name">CHILD LOCK</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">135</column>
+            <column name="attribute_id">50</column>
+            <column name="name">ALARM</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">136</column>
+            <column name="attribute_id">50</column>
+            <column name="name">MEHANIČKA ZAŠTITA
+</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">137</column>
+            <column name="attribute_id">50</column>
+            <column name="name">OBD ZAŠTITA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">138</column>
+            <column name="attribute_id">51</column>
+            <column name="name">METALIK BOJA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">139</column>
+            <column name="attribute_id">51</column>
+            <column name="name">TEMPOMAT</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">140</column>
+            <column name="attribute_id">51</column>
+            <column name="name">PANORAMA KROV</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">141</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SVJETLA ZA MAGLU</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">142</column>
+            <column name="attribute_id">51</column>
+            <column name="name">PARKING SENZORI</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">143</column>
+            <column name="attribute_id">51</column>
+            <column name="name">ALU. FELGE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">144</column>
+            <column name="attribute_id">51</column>
+            <column name="name">RADIO CD</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">145</column>
+            <column name="attribute_id">51</column>
+            <column name="name">AUTOMATSKO PARKIRANJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">146</column>
+            <column name="attribute_id">51</column>
+            <column name="name">HEAD-ON-DISPLAY</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">147</column>
+            <column name="attribute_id">51</column>
+            <column name="name">MULTIMEDIJA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">148</column>
+            <column name="attribute_id">51</column>
+            <column name="name">MEMORIJSKA SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">149</column>
+            <column name="attribute_id">51</column>
+            <column name="name">DNEVNA SVJETLA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">150</column>
+            <column name="attribute_id">51</column>
+            <column name="name">KAMERA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">151</column>
+            <column name="attribute_id">51</column>
+            <column name="name">VOLAN - DRVO/KOŽA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">152</column>
+            <column name="attribute_id">51</column>
+            <column name="name">PRIVLAČENJE VRATA - PRI ZATVARANJU</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">153</column>
+            <column name="attribute_id">51</column>
+            <column name="name">VENTILACIJA SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">154</column>
+            <column name="attribute_id">51</column>
+            <column name="name">BRANICI U BOJI AUTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">155</column>
+            <column name="attribute_id">51</column>
+            <column name="name">DALJINSKO ZAKLJUČAVANJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">156</column>
+            <column name="attribute_id">51</column>
+            <column name="name">TONIRANA STAKLA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">157</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SJEDIŠTA PODESIVA PO VISINI</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">158</column>
+            <column name="attribute_id">51</column>
+            <column name="name">XENON</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">159</column>
+            <column name="attribute_id">51</column>
+            <column name="name">WEBASTO</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">160</column>
+            <column name="attribute_id">51</column>
+            <column name="name">NAVIGACIJA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">161</column>
+            <column name="attribute_id">51</column>
+            <column name="name">CD CHANGER</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">162</column>
+            <column name="attribute_id">51</column>
+            <column name="name">LED ZADNJA SVIJETLA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">163</column>
+            <column name="attribute_id">51</column>
+            <column name="name">ISOFIX SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">164</column>
+            <column name="attribute_id">51</column>
+            <column name="name">GLASOVNE KOMANDE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">165</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SPORTSKA SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">166</column>
+            <column name="attribute_id">51</column>
+            <column name="name">TORBA ZA SKIJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">167</column>
+            <column name="attribute_id">51</column>
+            <column name="name">DJEČIJE SJEDIŠTE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">168</column>
+            <column name="attribute_id">51</column>
+            <column name="name">GRIJANJE VOLANA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">169</column>
+            <column name="attribute_id">51</column>
+            <column name="name">USB</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">170</column>
+            <column name="attribute_id">51</column>
+            <column name="name">VAZDUŠNO VJEŠANJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">171</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SERVO VOLAN</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">172</column>
+            <column name="attribute_id">51</column>
+            <column name="name">PUTNI RAČUNAR</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">173</column>
+            <column name="attribute_id">51</column>
+            <column name="name">EL. PODIZAČI</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">174</column>
+            <column name="attribute_id">51</column>
+            <column name="name">EL. SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">175</column>
+            <column name="attribute_id">51</column>
+            <column name="name">KROVNI NOSAČ</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">176</column>
+            <column name="attribute_id">51</column>
+            <column name="name">BLUETOOTH</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">177</column>
+            <column name="attribute_id">51</column>
+            <column name="name">DVD/TV</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">178</column>
+            <column name="attribute_id">51</column>
+            <column name="name">NASLON ZA RUKU</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">179</column>
+            <column name="attribute_id">51</column>
+            <column name="name">HANDS FREE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">180</column>
+            <column name="attribute_id">51</column>
+            <column name="name">START-STOP</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">181</column>
+            <column name="attribute_id">51</column>
+            <column name="name">MASAŽNA SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">182</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SPORTSKO VJEŠANJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">183</column>
+            <column name="attribute_id">51</column>
+            <column name="name">TOUCH EKRAN</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">184</column>
+            <column name="attribute_id">51</column>
+            <column name="name">EL. GEPEK</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">185</column>
+            <column name="attribute_id">51</column>
+            <column name="name">AMBIJETALNO OSVJETLJENJE</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">186</column>
+            <column name="attribute_id">51</column>
+            <column name="name">PALJENJE BEZ KLJUČA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">187</column>
+            <column name="attribute_id">51</column>
+            <column name="name">MULTI-FUNKCIONALNI VOLAN</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">188</column>
+            <column name="attribute_id">51</column>
+            <column name="name">ŠIBER</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">189</column>
+            <column name="attribute_id">51</column>
+            <column name="name">EL. RETROVIZORI</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">190</column>
+            <column name="attribute_id">51</column>
+            <column name="name">GRIJANJE SJEDIŠTA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">191</column>
+            <column name="attribute_id">51</column>
+            <column name="name">SENZOR ZA KIŠU</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">192</column>
+            <column name="attribute_id">51</column>
+            <column name="name">KUKA ZA VUČU</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">193</column>
+            <column name="attribute_id">51</column>
+            <column name="name">RADIO/KASETOFONO</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">194</column>
+            <column name="attribute_id">51</column>
+            <column name="name">LED PREDNJA SVIJETLA</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">195</column>
+            <column name="attribute_id">51</column>
+            <column name="name">DPF FILTER</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">196</column>
+            <column name="attribute_id">51</column>
+            <column name="name">KOŽNI VOLAN</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">197</column>
+            <column name="attribute_id">46</column>
+            <column name="name">Odjavljen</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">198</column>
+            <column name="attribute_id">10</column>
+            <column name="name">CVT</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">199</column>
+            <column name="attribute_id">12</column>
+            <column name="name">2/3</column>
+        </table>
+        <table name="attributes_values">
+            <column name="id">200</column>
+            <column name="attribute_id">12</column>
+            <column name="name">4/5</column>
+        </table>
+    </database>
