@@ -1,6 +1,0 @@
-# GENERAL #
-Password.Min.Length: Password needs to be at least 8 characters long
-Password.Requirement: Password must contain at least one number, one uppercase and one lowercase letter
-
-# FORMS #
-Account.Change.Password.Passwords.DontMatch: Passwords do not match

@@ -244,6 +244,7 @@ final class AuthController extends BaseController
         }
 
         $user->setCreatedOn(new DateTime());
+        $user->setActiveCredits(100);
         $emailToken = UserEmailConfirmToken::create($user);
 
         /** @var Role $userRole */
@@ -254,7 +255,7 @@ final class AuthController extends BaseController
         $this->em->persist($emailToken);
         $this->em->flush();
 
-        $this->eventBus->handle(new UserRegisteredEvent($user->getEmail(), $user->getName(), $emailToken->getToken()));
+        // $this->eventBus->handle(new UserRegisteredEvent($user->getEmail(), $user->getName(), $emailToken->getToken()));
 
         return ApiView::create($user);
     }
@@ -317,7 +318,7 @@ final class AuthController extends BaseController
         }
 
         $user = $emailConfirmToken->getUser();
-        $user->setActive(true);
+        $user->setEmailVerified(true);
 
         $this->em->remove($emailConfirmToken);
         $this->em->persist($user);
@@ -456,5 +457,14 @@ final class AuthController extends BaseController
         return ApiView::create($user);
     }
 
-
+    /**
+     * @Route("/", methods={"GET"})
+     * @return ApiView
+     *
+     * @throws Exception
+     */
+    public function homeAction(): ApiView
+    {
+        return ApiView::create('Auto bum API application');
+    }
 }

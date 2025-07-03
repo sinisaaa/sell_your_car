@@ -86,6 +86,8 @@ class CreateAdminCommand extends Command
         );
 
         $user->setActive(true);
+        $user->setEmailVerified(true);
+        $user->setActiveCredits(100);
 
         $this->em->persist($user);
         $this->em->flush();

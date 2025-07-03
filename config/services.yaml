@@ -41,6 +41,7 @@ services:
             - [ addFilter, [ "@app.query_filter.in_filter" ] ]
             - [ addFilter, [ "@app.query_filter.has_one_filter" ] ]
             - [ addFilter, [ "@app.query_filter.has_many_filter" ] ]
+            - [ addFilter, [ "@app.query_filter.less_than_filter" ] ]
 
     app.query_filter.like_filter:
         class: App\Helper\QueryFilter\Filters\LikeFilter
@@ -50,6 +51,9 @@ services:
 
     app.query_filter.greater_than_filter:
         class: App\Helper\QueryFilter\Filters\GreaterThanFilter
+
+    app.query_filter.less_than_filter:
+        class: App\Helper\QueryFilter\Filters\LessThanFilter
 
     app.query_filter.is_null_filter:
         class: App\Helper\QueryFilter\Filters\IsNullFilter

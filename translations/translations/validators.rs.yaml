@@ -1,6 +1,0 @@
-# GENERAL #
-Password.Min.Length: Lozinka mora sadrzati minimalno 8 karaktera
-Password.Requirement: Lozinka mora imati bar jedno malo slovo, jedno veliko slovo i jedan broj
-
-# FORMS #
-Account.Change.Password.Passwords.DontMatch: Lozinke se ne podudaraju

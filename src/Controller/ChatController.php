@@ -8,6 +8,7 @@ use App\CommandBus\Chat\Remove\ChatRemoveCommand;
 use App\Controller\Base\BaseController;
 use App\Entity\ChatMessage;
 use App\Form\Type\ChatCreateType;
+use App\Form\Type\ChatMessageCreateType;
 use App\Helper\ChatHelper;
 use DateTime;
 use Doctrine\ORM\EntityManagerInterface;
@@ -51,7 +52,7 @@ final class ChatController extends BaseController
      *     path="/api/chats",
      *     summary="Create chat beetween users",
      *     description="Create chat beetween users",
-     *     tags={"Chat"},
+     *     tags={"Chats"},
      *     @SWG\Response(
      *     response= 200,
      *     description="Created chat",
@@ -112,10 +113,79 @@ final class ChatController extends BaseController
     }
 
     /**
+     * @SWG\Post(
+     *     path="/api/chats/{chat}",
+     *     summary="Create chat message in chat",
+     *     description="Create chat message in chat",
+     *     tags={"Chats"},
+     *     @SWG\Response(
+     *     response= 200,
+     *     description="Updated chat",
+     *     @SWG\Schema(
+     *          @SWG\Property(property="items", type="array", @Model(type=Chat::class, groups={"user.rel", "chat.get", "chat_sender.get", "chat_receiver.get", "chat_message.get"})),
+     *          )
+     *     ),
+     *     @SWG\Response(
+     *          response = 400,
+     *          description="Form validation error"
+     *     ),
+     *     @SWG\Response(
+     *          response = 404,
+     *          description="Chat not found"
+     *     ),
+     *     @SWG\Response(
+     *            response="default",
+     *            description="error"
+     *        ),
+     *     @SWG\Parameter(
+     *          in="body",
+     *          name="chat",
+     *          @Model(type=ChatCreateType::class)
+     *     )
+     *   )
+     * )
+     *
+     * @ViewAnnotation(serializerGroups={"user.rel", "chat.get", "chat_sender.get", "chat_receiver.get", "chat_message.get"})
+     * @Route("/api/chats/{chat}", methods={"POST"})
+     * @Security("is_granted('CAN_ACCESS_CHAT', chat)")
+     *
+     * @param Chat $chat
+     * @param Request $request
+     * @return ApiView
+     *
+     */
+    public function createChatMessageAction(Chat $chat, Request $request): ApiView
+    {
+        $form = $this->createForm(ChatMessageCreateType::class);
+        $form->submit($request->request->all());
+
+        if (!$form->isValid()) {
+            return ApiView::create($form);
+        }
+
+
+        /** @var ChatMessage $chatMessage */
+        $chatMessage = $form->getData();
+
+        if($chat->getReceiver() == $this->getUser()) {
+            $receiver = $chat->getSender();
+        }else {
+            $receiver = $chat->getReceiver();
+        }
+        $chatMessage = ChatMessage::create($chat, $this->getUser(), $receiver, $chatMessage->getBody());
+        $chat->setUpdatedAt(new \DateTime());
+        $this->em->persist($chat);
+        $this->em->persist($chatMessage);
+        $this->em->flush();
+
+        return ApiView::create($chat);
+    }
+
+    /**
      * @SWG\Get(
      *   path="/api/chats",
      *   summary="List of chats for current user",
-     *   tags={"Chat"},
+     *   tags={"Chats"},
      *   @SWG\Response(
      *     response=200,
      *     description="A list of chats for current user",
@@ -181,7 +251,7 @@ final class ChatController extends BaseController
      * @SWG\Get(
      *   path="/api/chats/{chat}",
      *   summary="Open chat and return all messages",
-     *   tags={"Chat"},
+     *   tags={"Chats"},
      *   @SWG\Response(
      *     response=200,
      *     description="Open chat and return all messages",
@@ -201,7 +271,7 @@ final class ChatController extends BaseController
      *   )
      * )
      * @ViewAnnotation(serializerGroups={"user.rel", "chat.get", "chat_sender.get", "chat_receiver.get", "chat_message.get"})
-     * @Route("/api/chats/{chat}", methods={"GET"})
+     * @Route("/api/chats/{chat}", requirements={"chat": "\d+"},  methods={"GET"})
      * @Security("is_granted('CAN_ACCESS_CHAT', chat)")
      *
      * @param Chat $chat
@@ -219,7 +289,7 @@ final class ChatController extends BaseController
      * @SWG\Delete(
      *   path="/api/chats",
      *   summary="Mass remove chats by setting sender or receiver to null",
-     *   tags={"Chat"},
+     *   tags={"Chats"},
      *   @SWG\Response(
      *     response=204,
      *     description="Chats removed",

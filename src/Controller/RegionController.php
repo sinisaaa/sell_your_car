@@ -27,7 +27,7 @@ final class RegionController extends BaseController
 
     /**
      * @SWG\Get(
-     *   path="/api/regions",
+     *   path="/api/public/regions",
      *   summary="List of all regions",
      *   tags={"Regions"},
      *   @SWG\Response(
@@ -48,7 +48,7 @@ final class RegionController extends BaseController
      * )
      *
      * @ViewAnnotation(serializerGroups={"region.get"})
-     * @Route("/api/regions", methods={"GET"})
+     * @Route("/api/public/regions", methods={"GET"})
      *
      * @return ApiView
      */
@@ -61,7 +61,7 @@ final class RegionController extends BaseController
 
     /**
      * @SWG\Get(
-     *   path="/api/regions/{region}/locations",
+     *   path="/api/public/regions/{region}/locations",
      *   summary="List of all locations in region",
      *   tags={"Regions"},
      *   @SWG\Response(
@@ -86,7 +86,7 @@ final class RegionController extends BaseController
      * )
      *
      * @ViewAnnotation(serializerGroups={"location.get"})
-     * @Route("/api/regions/{region}/locations", methods={"GET"})
+     * @Route("/api/public/regions/{region}/locations", methods={"GET"})
      *
      * @param Region $region
      * @return ApiView
@@ -95,6 +95,40 @@ final class RegionController extends BaseController
     {
         return ApiView::create([
             'items' => $region->getLocations()->toArray()
+        ]);
+    }
+
+    /**
+     * @SWG\Get(
+     *   path="/api/public/locations",
+     *   summary="List of all locations",
+     *   tags={"Regions"},
+     *   @SWG\Response(
+     *     response=200,
+     *     description="List of all locations",
+     *     @SWG\Schema(
+     *          @SWG\Property(property="items", type="array", @Model(type=Location::class, groups={"location.get"})),
+     *      )
+     *   ),
+     *   @SWG\Response(
+     *     response=401,
+     *     description="Unauthorised"
+     *   ),
+     *   @SWG\Response(
+     *     response="default",
+     *     description="error"
+     *   )
+     * )
+     *
+     * @ViewAnnotation(serializerGroups={"location.get"})
+     * @Route("/api/public/locations", methods={"GET"})
+     *
+     * @return ApiView
+     */
+    public function getAllLocationsAction(): ApiView
+    {
+        return ApiView::create([
+            'items' => $this->em->getRepository(Location::class)->findAll()
         ]);
     }
 

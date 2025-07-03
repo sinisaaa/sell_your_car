@@ -5,6 +5,7 @@ declare(strict_types=1);
 namespace App\EventListener;
 
 use App\Entity\RecordedEvent;
+use App\Event\ContactMessageCreatedEvent;
 use App\Event\UserRegisteredEvent;
 use App\Helper\IPAddressHelper;
 use Doctrine\ORM\EntityManagerInterface;
@@ -30,5 +31,18 @@ final class EventRecorderListener
         $this->em->persist($eventAction);
         $this->em->flush();
     }
+
+    /**
+     * @param ContactMessageCreatedEvent $event
+     */
+    public function recordContactMessageCreatedEvent(ContactMessageCreatedEvent $event): void
+    {
+        $eventAction = RecordedEvent::create(RecordedEvent::CONTACT_EVENT, IPAddressHelper::getCurrentUserIpAddress());
+
+        $this->em->persist($eventAction);
+        $this->em->flush();
+    }
+
+
 
 }

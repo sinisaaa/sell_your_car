@@ -24,3 +24,21 @@ Exception.Auth.Reset.Password.Token.Expired: Token za promenu lozinke je istekao
 Exception.Chat.Body.Empty: Sadrzaj poruke ne moze biti prazan
 Exception.Chat.Chat.Not.Found: Konverzacija nije pronadjena
 Exception.Chat.User.Not.Have.Permissions: Korisnik nema prava pristupa konverzaciji
+Exception.User.Rated.User.Not.Car.Dealer: Regularni korisnici ne mogu biti ocenjeni
+Exception.User.You.Already.Rated.Car.Dealer: Vec ste dali ocenu za selektovanu radnju
+Exception.User.Can.Not.Rate.Self: Ne mozete oceniti sebe
+Exception.User.Car.Dealer.Not.Rated: Ocena za selektovanu radnju nije pronadjena
+Exception.My.Profile.Invalid.Old.Password: Stara lozinka nije ispravna
+Exception.Article.Article.Is.Deactivated: Artikal je deaktiviran
+Exception.Article.Not.Found: Artikal nije pronadjen
+Exception.Article.Already.Completed: Artikal je vec kreiran
+Exception.Article.Manufacturer.Not.Selected: Model ne moze biti selektovan bez proizvodjaca
+Exception.Article.Manufacturer.Model.Invalid: Model ne pripada selektovanom proizvodjacu
+Exception.Article.Field.Not.Found: Polje artikla nije pronadjeno
+Exception.Article.Field.Option.Not.Found: Opcija za polje artikla nije pronadjena
+Exception.Article.Field.Option.Not.Belong: Opcija polja artikla ne pripada datom polju
+Exception.Article.Field.Options.Must.Be.Array: Opcije polja za artikle moraju biti niz
+Exception.Article.Field.Not.Belong.To.Category: Polje ne pripada selektovanoj kategoriji artikla
+Exception.Contact.Message.Not.Found: Kontakt poruka nije pronadjena
+Exception.Contact.Wait.Time: Vec ste poslali kontakt poruku, molimo Vas sacekajte odredjeni period pre slanja sledece!
+Exception.Article.Promote.Not.Enough.Credits: Nemate dovoljno kredita za zeljenu akciju.

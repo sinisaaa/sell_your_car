@@ -4,12 +4,13 @@ declare(strict_types=1);
 
 namespace App\Service;
 
+use App\Entity\ArticleArticleCategoryField;
+use App\Helper\CustomQuery;
 use App\Helper\QueryFilter\Filters\AbstractFilter;
 use Doctrine\ORM\EntityManagerInterface;
 use Doctrine\ORM\Query;
 use Doctrine\ORM\QueryBuilder;
 use Doctrine\Persistence\ObjectRepository;
-use JsonException;
 use Symfony\Component\DependencyInjection\ContainerInterface;
 use Symfony\Component\HttpFoundation\Request;
 use InvalidArgumentException;
@@ -17,12 +18,6 @@ use RuntimeException;
 
 class QueryFromRequest
 {
-
-    /** @var EntityManagerInterface */
-    private EntityManagerInterface $em;
-
-    /** @var ContainerInterface */
-    private ContainerInterface $container;
 
     /** @var ObjectRepository */
     private ObjectRepository $repository;
@@ -33,30 +28,30 @@ class QueryFromRequest
      * @param ContainerInterface $container
      */
     public function __construct(
-        EntityManagerInterface $em,
-        ContainerInterface $container,
+        private EntityManagerInterface $em,
+        private ContainerInterface $container,
     ) {
-        $this->em = $em;
-        $this->container = $container;
     }
 
     /**
      * @param Request $request
      * @param string $alias
      * @param string $repositoryClass
+     * @param CustomQuery|null $customQuery
      * @return Query
-     *
-     * @throws JsonException
      */
-    public function generate(Request $request, string $alias, string $repositoryClass): Query
+    public function generate(Request $request, string $alias, string $repositoryClass, ?CustomQuery $customQuery = null): Query
     {
         $filters = $request->query->get('filters');
+        $fieldsFilters = $request->query->get('fieldsFilters');
         $sort = $request->query->get('sort');
         $direction = $request->query->get('direction');
 
         $qb = $this->initQueryBuilder($alias, $repositoryClass);
 
+        $qb = $this->addCustomQueries($customQuery, $qb);
         $qb = $this->addFilters($filters, $qb);
+        $qb = $this->addFieldsFilters($fieldsFilters, $qb);
         $qb = $this->addSort($sort, $direction, $alias, $qb);
 
         return $qb->getQuery();
@@ -94,6 +89,20 @@ class QueryFromRequest
     }
 
     /**
+     * @param CustomQuery|null $customQuery
+     * @param QueryBuilder $qb
+     * @return QueryBuilder
+     */
+    private function addCustomQueries(?CustomQuery $customQuery, QueryBuilder $qb): QueryBuilder
+    {
+        if ($customQuery) {
+            $qb = $customQuery->generateAdditionalQuery($qb);
+        }
+
+        return $qb;
+    }
+
+    /**
      * @param string|null $filtersJson
      * @param QueryBuilder $qb
      * @return QueryBuilder
@@ -123,6 +132,73 @@ class QueryFromRequest
                 $filter->field = $this->removeEmbedNotiationFromField($filter->field);
 
                 $qb = $filterClass->filter($qb, $filter->field, $filter->value);
+            }
+        }
+
+        return $qb;
+    }
+
+    /**
+     * @param string|null $fieldFiltersJson
+     * @param QueryBuilder $qb
+     * @return QueryBuilder
+     */
+    private function addFieldsFilters(?string $fieldFiltersJson, QueryBuilder $qb): QueryBuilder
+    {
+        if (null === $fieldFiltersJson) {
+            return $qb;
+        }
+
+        $filters = json_decode(urldecode($fieldFiltersJson));
+        if (JSON_ERROR_NONE !== json_last_error()) {
+            return $qb;
+        }
+
+        foreach($filters as $i => $filter) {
+            if ($filter->type === 'gte') {
+
+                $query = $this->em->createQueryBuilder();
+                $query->select('aaf' . $i);
+                $query->from(ArticleArticleCategoryField::class, 'aaf' . $i);
+                $query->where($qb->expr()->andX(
+                    $qb->expr()->eq("aaf$i.article", 'a.id'),
+                    $qb->expr()->eq("aaf$i.field", $qb->expr()->literal($filter->field)),
+                    $qb->expr()->gte("aaf$i.value", $qb->expr()->literal($filter->value))
+                ));
+
+                $qb->andWhere($qb->expr()->exists($query->getDQL()));
+            }
+
+            if ($filter->type === 'lte') {
+                $query = $this->em->createQueryBuilder();
+                $query->select('aaf' . $i);
+                $query->from(ArticleArticleCategoryField::class, 'aaf' . $i);
+                $query->where($qb->expr()->andX(
+                    $qb->expr()->eq("aaf$i.article", 'a.id'),
+                    $qb->expr()->eq("aaf$i.field", $qb->expr()->literal($filter->field)),
+                    $qb->expr()->lte("aaf$i.value", $qb->expr()->literal($filter->value))
+                ));
+
+                $qb->andWhere($qb->expr()->exists($query->getDQL()));
+            }
+
+            if ($filter->type === 'hasOne') {
+                if (!is_array($filter->value)) {
+                    continue;
+                }
+                $inString = implode(', ', $filter->value);
+
+                $query = $this->em->createQueryBuilder();
+                $query->select('1');
+                $query->from(ArticleArticleCategoryField::class, 'aaf' . $i);
+                $query->leftJoin("aaf$i.fieldOptions", 'aafo' . $i);
+                $query->where($qb->expr()->andX(
+                    $qb->expr()->eq("aaf$i.article", 'a.id'),
+                    $qb->expr()->eq("aaf$i.field", $qb->expr()->literal($filter->field)),
+                    "aafo$i.id IN ({$inString})"
+                ));
+
+                $qb->andWhere($qb->expr()->exists($query->getDQL()));
             }
         }
 

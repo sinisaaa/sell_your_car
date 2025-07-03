@@ -1,10 +1,18 @@
 <?php
 
+declare(strict_types=1);
+
 namespace App\Entity;
 
 use App\Repository\ArticleRepository;
+use DateTime;
 use DateTimeInterface;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
+use Doctrine\Common\Collections\Criteria;
 use Doctrine\ORM\Mapping as ORM;
+use Gregwar\Image\Image;
+use http\Exception\InvalidArgumentException;
 use Symfony\Component\Serializer\Annotation\Groups;
 
 /**
@@ -31,7 +39,7 @@ class Article
      * @ORM\Column(type="boolean", nullable=true)
      * @Groups({"article.get"})
      */
-    private ?bool $exchange = null;
+    private ?bool $exchange = false;
 
     /**
      * @ORM\Column(type="decimal", nullable=true, precision=20, scale=2)
@@ -61,7 +69,7 @@ class Article
      * @ORM\Column(type="boolean", nullable=true, options={"default": false})
      * @Groups({"article.get"})
      */
-    private bool $featured = false;
+    private bool $featuredPending = false;
 
     /**
      * @ORM\Column(type="string", length=255, nullable=true)
@@ -130,6 +138,77 @@ class Article
      * @Groups({"article.get"})
      */
     private int $hits = 0;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"article.get"})
+     */
+    private ?DateTimeInterface $featuredFrom = null;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     * @Groups({"article.get"})
+     */
+    private ?DateTimeInterface $featuredTo = null;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ArticleImage::class, mappedBy="article")
+     * @Groups({"article_image.get"})
+     */
+    private Collection $articleImages;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=ArticleManufacturer::class)
+     * @Groups({"article.get"})
+     */
+    private ?ArticleManufacturer $manufacturer = null;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=ArticleManufacturerModel::class)
+     * @Groups({"article.get"})
+     */
+    private ?ArticleManufacturerModel $manufacturerModel = null;
+
+    /**
+     * @ORM\OneToMany(targetEntity=ArticleArticleCategoryField::class, mappedBy="article", orphanRemoval=true)
+     * @Groups({"article_category_fields.get"})
+     */
+    private Collection $categoryFields;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=ArticleCategory::class)
+     * @ORM\JoinColumn(nullable=false)
+     */
+    private ArticleCategory $category;
+
+    /**
+     * @ORM\OneToMany(targetEntity=UserFavoriteArticles::class, mappedBy="article")
+     */
+    private Collection $favoriteByUsers;
+
+    /**
+     * @Groups({"article.get"})
+     */
+    private bool $favorite = false;
+
+    /**
+     * @ORM\Column(type="integer", nullable=true)
+     */
+    private ?int $pikId = null;
+
+    /**
+     * @ORM\Column(type="boolean", options={"default": false})
+     */
+    private bool $isDraft = false;
+
+    /**
+     * Article constructor.
+     */
+    public function __construct()
+    {
+        $this->articleImages = new ArrayCollection();
+        $this->categoryFields = new ArrayCollection();
+    }
 
     /**
      * @return int|null
@@ -226,18 +305,18 @@ class Article
     /**
      * @return bool|null
      */
-    public function getFeatured(): ?bool
+    public function getFeaturedPending(): ?bool
     {
-        return $this->featured;
+        return $this->featuredPending;
     }
 
     /**
-     * @param bool $featured
+     * @param bool $featuredPending
      * @return $this
      */
-    public function setFeatured(bool $featured): self
+    public function setFeaturedPending(bool $featuredPending): self
     {
-        $this->featured = $featured;
+        $this->featuredPending = $featuredPending;
 
         return $this;
     }
@@ -496,4 +575,337 @@ class Article
     {
         $this->hits++;
     }
+
+    /**
+     * @return DateTimeInterface|null
+     */
+    public function getFeaturedFrom(): ?\DateTimeInterface
+    {
+        return $this->featuredFrom;
+    }
+
+    /**
+     * @param DateTimeInterface|null $featuredFrom
+     * @return $this
+     */
+    public function setFeaturedFrom(?\DateTimeInterface $featuredFrom): self
+    {
+        $this->featuredFrom = $featuredFrom;
+
+        return $this;
+    }
+
+    /**
+     * @return DateTimeInterface|null
+     */
+    public function getFeaturedTo(): ?DateTimeInterface
+    {
+        return $this->featuredTo;
+    }
+
+    /**
+     * @param DateTimeInterface|null $featuredTo
+     * @return $this
+     */
+    public function setFeaturedTo(?DateTimeInterface $featuredTo): self
+    {
+        $this->featuredTo = $featuredTo;
+
+        return $this;
+    }
+
+    /**
+     * @return bool
+     * @Groups({"article.get"})
+     */
+    public function isFeatured(): bool
+    {
+        return null !== $this->featuredFrom && null !== $this->featuredTo && $this->featuredFrom <= new DateTime() && $this->featuredTo >= new DateTime();
+    }
+
+    /**
+     * @return int[]
+     */
+    public static function getValidFeaturedPeriods(): array
+    {
+        return [1, 3, 5, 10];
+    }
+
+    /**
+     * @return int[]
+     */
+    public static function getPeriodPrices(): array
+    {
+        return [1 => 20, 3 => 40, 5 => 60, 10 => 100];
+    }
+
+    /**
+     * @param int $period
+     *
+     * @return int
+     */
+    public static function getPeriodFeaturedPrice(int $period): int
+    {
+        if (false === array_key_exists($period, self::getPeriodPrices())) {
+            throw new InvalidArgumentException('Invalid feature period');
+        }
+
+        return self::getPeriodPrices()[$period];
+    }
+
+    /**
+     * @return Collection<int, ArticleImage>
+     */
+    public function getArticleImages(): Collection
+    {
+        return $this->articleImages;
+    }
+
+    /**
+     * @param ArticleImage $articleImage
+     * @return $this
+     */
+    public function addArticleImage(ArticleImage $articleImage): self
+    {
+        if (!$this->articleImages->contains($articleImage)) {
+            $this->articleImages[] = $articleImage;
+            $articleImage->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ArticleImage $articleImage
+     * @return $this
+     */
+    public function removeArticleImage(ArticleImage $articleImage): self
+    {
+        if ($this->articleImages->removeElement($articleImage) && $articleImage->getArticle() === $this) {
+            $articleImage->setArticle(null);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     * @Groups({"article.get"})
+     */
+    public function getImageThumb(): ?string
+    {
+        if (0 < $this->getArticleImages()->count()) {
+            /** @var ArticleImage $firstImage */
+            $firstImage = $this->getArticleImages()->first();
+            return $firstImage->getSmallGalleryImage();
+        }
+
+        return null;
+    }
+
+    /**
+     * @return ArticleManufacturer|null
+     */
+    public function getManufacturer(): ?ArticleManufacturer
+    {
+        return $this->manufacturer;
+    }
+
+    /**
+     * @param ArticleManufacturer|null $manufacturer
+     * @return $this
+     */
+    public function setManufacturer(?ArticleManufacturer $manufacturer): self
+    {
+        $this->manufacturer = $manufacturer;
+
+        return $this;
+    }
+
+    /**
+     * @return ArticleManufacturerModel|null
+     */
+    public function getManufacturerModel(): ?ArticleManufacturerModel
+    {
+        return $this->manufacturerModel;
+    }
+
+    /**
+     * @param ArticleManufacturerModel|null $manufacturerModel
+     * @return $this
+     */
+    public function setManufacturerModel(?ArticleManufacturerModel $manufacturerModel): self
+    {
+        $this->manufacturerModel = $manufacturerModel;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getCategoryFields(): Collection
+    {
+        return $this->categoryFields;
+    }
+
+    /**
+     * @param ArticleArticleCategoryField $categoryField
+     * @return $this
+     */
+    public function addCategoryField(ArticleArticleCategoryField $categoryField): self
+    {
+        if (!$this->categoryFields->contains($categoryField)) {
+            $this->categoryFields[] = $categoryField;
+            $categoryField->setArticle($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @param ArticleArticleCategoryField $categoryField
+     * @return $this
+     */
+    public function removeCategoryField(ArticleArticleCategoryField $categoryField): self
+    {
+        if ($this->categoryFields->removeElement($categoryField) && $categoryField->getArticle() === $this) {
+            $categoryField->setArticle(null);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return ArticleCategory
+     */
+    public function getCategory(): ArticleCategory
+    {
+        return $this->category;
+    }
+
+    /**
+     * @param ArticleCategory $category
+     * @return $this
+     */
+    public function setCategory(ArticleCategory $category): self
+    {
+        $this->category = $category;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection
+     */
+    public function getFavoriteByUsers(): Collection
+    {
+        return $this->favoriteByUsers;
+    }
+
+    /**
+     * @return bool
+     */
+    public function isFavorite(): bool
+    {
+        return $this->favorite;
+    }
+
+    /**
+     * @param bool $favorite
+     * @return Article
+     */
+    public function setFavorite(bool $favorite): self
+    {
+        $this->favorite = $favorite;
+
+        return $this;
+    }
+
+    /**
+     * @return int|null
+     */
+    public function getPikId(): ?int
+    {
+        return $this->pikId;
+    }
+
+    /**
+     * @param int|null $pikId
+     * @return $this
+     */
+    public function setPikId(?int $pikId): self
+    {
+        $this->pikId = $pikId;
+
+        return $this;
+    }
+
+    /**
+     * @return string|null
+     * @Groups({"article.get"})
+     */
+    public function getMileage(): ?string
+    {
+        /** @var ArticleArticleCategoryField $articleCategoryField */
+        foreach($this->getCategoryFields() as $articleCategoryField) {
+            if ('mileage' === $articleCategoryField->getField()->getOldName()) {
+                return $articleCategoryField->getValue();
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * @return string|null
+     * @Groups({"article.get"})
+     */
+    public function getFuel(): ?string
+    {
+        /** @var ArticleArticleCategoryField $articleCategoryField */
+        foreach($this->getCategoryFields() as $articleCategoryField) {
+            if ('fuel' === $articleCategoryField->getField()->getOldName()) {
+                return $articleCategoryField->getFieldOptions()->first() ? $articleCategoryField->getFieldOptions()->first()->getName() : '';
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * @return string|null
+     * @Groups({"article.get"})
+     */
+    public function getProductionYear(): ?string
+    {
+        /** @var ArticleArticleCategoryField $articleCategoryField */
+        foreach($this->getCategoryFields() as $articleCategoryField) {
+            if ('prod_year' === $articleCategoryField->getField()->getOldName()) {
+                return $articleCategoryField->getValue();
+            }
+        }
+
+        return '';
+    }
+
+    /**
+     * @return bool
+     */
+    public function getIsDraft(): bool
+    {
+        return $this->isDraft;
+    }
+
+    /**
+     * @param bool $isDraft
+     * @return $this
+     */
+    public function setIsDraft(bool $isDraft): self
+    {
+        $this->isDraft = $isDraft;
+
+        return $this;
+    }
+
 }

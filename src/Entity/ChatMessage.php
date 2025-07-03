@@ -19,6 +19,7 @@ class ChatMessage
      * @ORM\Id
      * @ORM\GeneratedValue
      * @ORM\Column(type="integer")
+     * @Groups({"chat_message.get"})
      * @var int|null
      */
     private ?int $id;

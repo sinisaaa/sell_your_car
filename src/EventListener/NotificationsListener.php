@@ -37,7 +37,7 @@ final class NotificationsListener
             $event->getEmail(),
             $this->translator->trans('Email.Messages.Registration.Confirm.Email.Address.Title'),
             'register_confirm.html.twig',
-            ['name' => $event->getName(), 'link' => $frontendURL . '/auth/confirm-email?token=' . $event->getEmailToken()]
+            ['name' => $event->getName(), 'link' => $frontendURL . '/auth/potvrdi-email?token=' . $event->getEmailToken()]
         );
 
         $this->mailerService->makeMailerServiceService()->sendEmail($mail);
@@ -53,7 +53,7 @@ final class NotificationsListener
             $event->getUser()->getEmail(),
             $this->translator->trans('Email.Messages.User.Forgot.Password.Title'),
             'forgot_password.html.twig',
-            ['name' => $event->getUser()->getName(), 'link' => $frontendURL . '/auth/forgot-password?token=' . $event->getForgotPasswordToken()]
+            ['name' => $event->getUser()->getName(), 'link' => $frontendURL . '/auth/restart-lozinke?token=' . $event->getForgotPasswordToken()]
         );
 
         $this->mailerService->makeMailerServiceService()->sendEmail($mail);

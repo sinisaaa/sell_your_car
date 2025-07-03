@@ -25,7 +25,7 @@ class AdminUserPromoteAPITest extends AbstractAPITestCase
         $userForPromote = $userRepo->findBy(['email' => 'userForPromote@mail.com'], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(
-            'PUT',
+            'POST',
             '/api/admin/users/' . $userForPromote->getId() . '/promote',
         );
 
@@ -49,7 +49,7 @@ class AdminUserPromoteAPITest extends AbstractAPITestCase
         $userForPromote = $userRepo->findBy(['email' => 'userForPromote@mail.com'], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(
-            'PUT',
+            'POST',
             '/api/admin/users/' . $userForPromote->getId() . '/promote',
         );
 
@@ -65,7 +65,7 @@ class AdminUserPromoteAPITest extends AbstractAPITestCase
         $userForPromote = $userRepo->findBy(['email' => 'userForPromote@mail.com'], ['id' => 'ASC'], 1, 0)[0];
 
         $this->client->request(
-            'PUT',
+            'POST',
             '/api/admin/users/' . $userForPromote->getId() . '/promote',
         );
 

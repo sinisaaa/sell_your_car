@@ -6,7 +6,7 @@ namespace App\Helper\Exceptions;
 
 use Exception;
 
-class EntityException extends Exception
+final class EntityException extends Exception
 {
 
 }
